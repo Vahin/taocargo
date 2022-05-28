@@ -1,0 +1,26 @@
+.bid {
+    &__container {
+        background: $color_bg_secondary;
+        max-width: 626px;
+        overflow-y: scroll;
+
+        @media (max-width: $width_4) {
+            padding: 30px 15px 20px;
+        }
+    }
+
+    &__header {
+    }
+
+    &__text {
+    }
+}
+
+.bid .form {
+    &__container {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 27px;
+    }
+}

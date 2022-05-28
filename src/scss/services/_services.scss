@@ -1,0 +1,75 @@
+.services {
+    background: $color_bg_secondary;
+    overflow: hidden;
+
+    &__container {
+        padding: 100px 20px;
+    }
+
+    &__header {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    &__slider {
+        position: relative;
+    }
+
+    &__viewport {
+        display: flex;
+        overflow: hidden;
+    }
+
+    &__card {
+        flex: 0 0 30%;
+    }
+
+    &__arrow {
+        display: block;
+
+        @media (max-width: $width_2) {
+            display: none;
+        }
+    }
+
+    &__pagination {
+        display: none;
+        @media (max-width: $width_2) {
+            display: block;
+        }
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -70px;
+    }
+}
+
+.servicecard {
+    box-shadow: $shadow_3;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%);
+    padding: 250px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        font-weight: 700;
+        font-size: $fsz / 6 * 11;
+        line-height: 124.5%;
+        color: $color_white_1;
+        margin-bottom: 13px;
+    }
+
+    &__text {
+        font-size: $fsz / 4 * 5;
+        line-height: 124.5%;
+        color: $color_white_1;
+        margin-bottom: 14px;
+    }
+
+    &__button {
+        margin-top: auto;
+        padding: 14px 24px;
+    }
+}

@@ -1,0 +1,112 @@
+@import "logo";
+@import "menu";
+@import "burger";
+
+.header {
+    @media (max-width: $width_3) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 98;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 98;
+
+            background-color: $color_bg_main;
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        padding: 26px 20px;
+    }
+
+    &__logo {
+        width: 172px;
+        position: relative;
+        z-index: 99;
+
+        @media (max-width: $width_2) {
+            width: 126px;
+        }
+    }
+
+    &__nav {
+        flex: 1 0;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $width_3) {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            z-index: 97;
+
+            padding-top: 110px;
+            background: $color_bg_secondary;
+            box-shadow: 14px 22px 40px rgba(30, 35, 66, 0.28);
+
+            flex-direction: column;
+            overflow-y: scroll;
+
+            top: -100%;
+            max-height: 0;
+            opacity: 1;
+
+            transition: all $transition_menu;
+        }
+    }
+
+    &__nav.active {
+        max-height: 100%;
+        top: 0;
+        opacity: 1;
+    }
+
+    &__menu {
+        flex: 1 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 95px;
+
+        @media (max-width: $width_2) {
+            margin: 0 40px;
+        }
+
+        @media (max-width: $width_3) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 34px;
+        }
+    }
+
+    &__request-button {
+        @media (max-width: $width_3) {
+            margin-bottom: 60px;
+        }
+
+        &.button_with-arrow {
+            width: 293px;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        @media (max-width: $width_3) {
+            display: block;
+            margin-left: auto;
+            position: relative;
+            z-index: 99;
+        }
+    }
+}

@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <div class="container header__container">
+                    <div class="header__logo logo">
+                        <img src="/src/img/logo.svg" alt="Master Tao" class="logo__img" />
+                    </div>
+
+                    <nav class="header__nav">
+                        <ul class="header__menu menu">
+                            <li class="menu__item">
+                                <a href="#" class="menu__link" data-anchor="options">Цены и сроки</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link" data-anchor="services">Услуги</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link" data-anchor="about">О компании</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link" data-anchor="footer">Контакты</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#" class="menu__link" data-anchor="order">Оформить груз</a>
+                            </li>
+                        </ul>
+
+                        <div class="header__request-button button" data-modal="bid">
+                            <span class="button__text">Оставить заявку</span>
+                            <div class="button__arrow">
+                                <div class="button__arrow-line"></div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <a class="header__burger burger">
+                        <span class="burger__line"></span>
+                    </a>
+                </div>
+            </header>
+
+            <section class="welcome">
+                <div class="welcome__slider slider">
+                    <div class="slider__viewport slider-viewport">
+                        <div class="slider-item">
+                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="/src/img/welcome/slider-1.jpg" alt="" />
+                                <div class="welcome__container container">
+                                    <div class="welcome__main">
+                                        <div class="welcome__header">Прямое КАРГО из Китая</div>
+
+                                        <div class="welcome__text">Доставляем любые грузы из Китая по честной цене</div>
+
+                                        <div class="welcome__request-button button button_big" data-modal="bid">
+                                            <span class="button__text">Расчитать стоимость</span>
+                                            <div class="button__arrow">
+                                                <div class="button__arrow-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-item">
+                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="/src/img/welcome/slider-2.jpg" alt="" />
+                                <div class="welcome__container container">
+                                    <div class="welcome__main">
+                                        <div class="welcome__header">Гарантируем сроки!</div>
+
+                                        <div class="welcome__text">Если мы не уложимся в обозначенные сроки, доставка груза со скидкой до 90%</div>
+
+                                        <div class="welcome__request-button button button_big" data-modal="bid">
+                                            <span class="button__text">Расчитать стоимость</span>
+                                            <div class="button__arrow">
+                                                <div class="button__arrow-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-item">
+                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="/src/img/welcome/slider-3.jpg" alt="" />
+                                <div class="welcome__container container">
+                                    <div class="welcome__main">
+                                        <div class="welcome__header">Выкуп товара с ТаоБао, 1688</div>
+
+                                        <div class="welcome__text">Выкуп и доставка товаров с китайских торговых площадок.</div>
+
+                                        <div class="welcome__request-button button button_big" data-modal="bid">
+                                            <span class="button__text">Расчитать стоимость</span>
+                                            <div class="button__arrow">
+                                                <div class="button__arrow-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-item">
+                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="/src/img/welcome/slider-4.jpg" alt="" />
+                                <div class="welcome__container container">
+                                    <div class="welcome__main">
+                                        <div class="welcome__header">Экспресс авто доставка</div>
+
+                                        <div class="welcome__text">Доставка автотранспортом из Китая в Россию от 15 дней, от $0,5/кг</div>
+
+                                        <div class="welcome__request-button button button_big" data-modal="bid">
+                                            <span class="button__text">Расчитать стоимость</span>
+                                            <div class="button__arrow">
+                                                <div class="button__arrow-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="slider__arrow slider__arrow_left slider-prev">
+                        <span class="slider__arrow-item"></span>
+                    </a>
+                    <a class="slider__arrow slider__arrow_right slider-next">
+                        <span class="slider__arrow-item"></span>
+                    </a>
+
+                    <div class="slider__pagination pagination">
+                        <ul class="pagination__list">
+                            <li class="pagination__item slider-pagination-item">
+                                <a href="#" class="pagination__link">
+                                    <span class="pagination__dot"></span>
+                                </a>
+                            </li>
+
+                            <li class="pagination__item slider-pagination-item">
+                                <a href="#" class="pagination__link">
+                                    <span class="pagination__dot"></span>
+                                </a>
+                            </li>
+
+                            <li class="pagination__item slider-pagination-item">
+                                <a href="#" class="pagination__link">
+                                    <span class="pagination__dot"></span>
+                                </a>
+                            </li>
+
+                            <li class="pagination__item slider-pagination-item">
+                                <a href="#" class="pagination__link">
+                                    <span class="pagination__dot"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bid modal">
+                <form class="bid__form form">
+                    <div class="bid__container modal__container">
+                        <div class="modal__cross"></div>
+                        <div class="bid__header modal__header">Оставьте заявку</div>
+                        <div class="bid__text modal__text">
+                            Заполните заявку, сообщите наименование товара/груза и наш специалист свяжется с Вами в рабочее время.
+                        </div>
+
+                        <div class="form__container">
+                            <div class="form__section form__section_double">
+                                <label class="form__label">
+                                    <div class="form__input-name">Имя:</div>
+                                    <input type="text" class="form__input" placeholder="Введите имя" data-type="name" data-storage="name" />
+                                </label>
+                            </div>
+
+                            <div class="form__section">
+                                <label class="form__label">
+                                    <div class="form__input-name">Номер телефона:</div>
+                                    <input type="tel" class="form__input" placeholder="+7(___)___-__-__" data-type="tel" data-storage="tel" />
+                                </label>
+                            </div>
+
+                            <div class="form__section">
+                                <label class="form__label">
+                                    <div class="form__input-name">Email:</div>
+                                    <input type="email" class="form__input" placeholder="Введите e-mail" data-type="email" data-storage="email" />
+                                </label>
+                            </div>
+
+                            <div class="form__section form__section_double form__section_fill form__section_margin-bottom">
+                                <label class="form__label">
+                                    <div class="form__input-name">Комментарий:</div>
+                                    <textarea
+                                        class="form__input form__input_area"
+                                        placeholder="Подробности о товаре, описание, количество"
+                                        data-storage="comment"
+                                    ></textarea>
+                                </label>
+                            </div>
+
+                            <div class="form__section form__section_double form__section_space-between">
+                                <button class="form_submit-button button button_big modal-complete">
+                                    <span class="button__text">Расчитать</span>
+                                    <div class="button__arrow">
+                                        <div class="button__arrow-line"></div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="bid__complete modal">
+                <div class="bid__container modal__container">
+                    <div class="modal__cross"></div>
+                    <div class="slider-item form__complete-page">
+                        <div class="form__complete-image" data-sbi="0 center / contain no-repeat">
+                            <img src="./src/img/calculate/checked.png" alt="" />
+                        </div>
+                        <div class="form__complete-head">Спасибо за заявку!</div>
+                        <div class="form__complete-text">Мы обязатальено свяжемся с вами.</div>
+
+                        <div class="form__complete-sameway">Так же для вас может быть полезно:</div>
+                        <ul class="form__complete-list">
+                            <li class="form__complete-item">
+                                <a href="#" class="form__complete-link" data-anchor="services">Услуги</a>
+                            </li>
+                            <li class="form__complete-item">
+                                <a href="#" class="form__complete-link" data-anchor="choiseus">Примеры грузоперевозок</a>
+                            </li>
+                            <li class="form__complete-item">
+                                <a href="#" class="form__complete-link" data-anchor="services">Поиск товаров в Китае</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="order">
+                <div class="order__container container">
+                    <div class="order__subcontainer">
+                        <div class="order__header header_2">Получить рассчет стоимости доставки вашего груза</div>
+                        <form class="order__form form">
+                            <div class="order__slider slider">
+                                <ul class="slider-pagination">
+                                    <li class="slider-pagination-item">1</li>
+                                    <li class="slider-pagination-item">2</li>
+                                    <li class="slider-pagination-item">3</li>
+                                </ul>
+                                <div class="slider-viewport">
+                                    <div class="slider-item form__container">
+                                        <div class="form__section">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Категория товара:</div>
+                                                <input
+                                                    type="text"
+                                                    class="form__input"
+                                                    placeholder="Категория товара"
+                                                    data-type="text"
+                                                    data-storage="category"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Стоимость груза:</div>
+                                                <input
+                                                    type="number"
+                                                    class="form__input"
+                                                    placeholder="Введите стоимость"
+                                                    step="1"
+                                                    min="0"
+                                                    data-type="number"
+                                                    data-storage="price"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Вес груза (кг):</div>
+                                                <input
+                                                    type="number"
+                                                    class="form__input"
+                                                    placeholder="Введите вес"
+                                                    step="0.5"
+                                                    min="0"
+                                                    data-type="number"
+                                                    data-storage="weight"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section">
+                                            <button class="form__assistant-button form__assistant-button_orange">Расчитать</button>
+                                            <label class="form__label">
+                                                <div class="form__input-name">Объем груза (м3):</div>
+                                                <input
+                                                    type="number"
+                                                    class="form__input"
+                                                    placeholder="Введите объем"
+                                                    data-type="number"
+                                                    data-target="volume"
+                                                    step="0.5"
+                                                    min="0"
+                                                    data-storage="volume"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_checkbox">
+                                            <label class="form__label">
+                                                <input type="checkbox" class="form__input form__input_hidden" />
+                                                <div class="form__input_checkbox">Страховка</div>
+                                            </label>
+                                            <label class="form__label">
+                                                <input type="checkbox" class="form__input form__input_hidden" />
+                                                <div class="form__input_checkbox">Таможенное оформление</div>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Код ТН ВЭД:</div>
+                                                <input
+                                                    type="text"
+                                                    class="form__input"
+                                                    placeholder="Введите код"
+                                                    data-type="text"
+                                                    data-storage="code"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double form__section_margin">
+                                            <button class="form__assistant-button form__assistant-button_red">Удалить фото</button>
+                                            <label class="form__label">
+                                                <div class="form__input-name">фотография.jpeg:</div>
+                                                <input type="file" class="form__input form__input_hidden" data-type="file" />
+                                                <div class="form__input_file">Загрузить фото товара</div>
+                                            </label>
+                                        </div>
+                                        <div class="form__section form__section_double form__section_centered">
+                                            <div class="form__submit-button button button_big slider-next">
+                                                <span class="button__text">Следующий шаг</span>
+                                                <div class="button__arrow">
+                                                    <div class="button__arrow-line"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider-item form__container">
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Имя:</div>
+                                                <input
+                                                    type="text"
+                                                    class="form__input"
+                                                    placeholder="Введите имя"
+                                                    data-type="name"
+                                                    data-storage="name"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Номер телефона:</div>
+                                                <input
+                                                    type="tel"
+                                                    class="form__input"
+                                                    placeholder="+7(___)___-__-__"
+                                                    data-type="tel"
+                                                    data-storage="tel"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Email:</div>
+                                                <input
+                                                    type="email"
+                                                    class="form__input"
+                                                    placeholder="Введите e-mail"
+                                                    data-type="email"
+                                                    data-storage="email"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double form__section_fill form__section_margin-bottom">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Комментарий:</div>
+                                                <textarea
+                                                    class="form__input form__input_area"
+                                                    placeholder="Подробности о товаре, описание, количество"
+                                                    data-storage="comment"
+                                                ></textarea>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double form__section_space-between">
+                                            <div class="form_submit-button button button_transparent slider-prev">
+                                                <span class="button__text">Назад</span>
+                                            </div>
+
+                                            <div class="form_submit-button button button_big slider-next">
+                                                <span class="button__text">Следующий шаг</span>
+                                                <div class="button__arrow">
+                                                    <div class="button__arrow-line"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider-item form__complete-page">
+                                        <div class="form__complete-image" data-sbi="0 center / contain no-repeat">
+                                            <img src="./src/img/calculate/checked.png" alt="" />
+                                        </div>
+                                        <div class="form__complete-head">Спасибо за заявку!</div>
+                                        <div class="form__complete-text">Мы обязатальено свяжемся с вами.</div>
+
+                                        <div class="form__complete-sameway">Так же для вас может быть полезно:</div>
+                                        <ul class="form__complete-list">
+                                            <li class="form__complete-item">
+                                                <a href="#" class="form__complete-link" data-anchor="services">Услуги</a>
+                                            </li>
+                                            <li class="form__complete-item">
+                                                <a href="#" class="form__complete-link" data-anchor="choiseus">Примеры грузоперевозок</a>
+                                            </li>
+                                            <li class="form__complete-item">
+                                                <a href="#" class="form__complete-link" data-anchor="services">Поиск товаров в Китае</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modal">
+                                    <div class="modal__container form__container">
+                                        <button class="modal__cross"></button>
+                                        <div class="modal__header">Рассчитать объем</div>
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <select class="form__input form__input_select">
+                                                    <option value="meters" class="form__input_option">Метры</option>
+                                                    <option value="santimeters" class="form__input_option">Сантиметры</option>
+                                                </select>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Ширина:</div>
+                                                <input
+                                                    type="number"
+                                                    class="form__input"
+                                                    placeholder="Введите ширину"
+                                                    min="0"
+                                                    step="0.1"
+                                                    data-type="number"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Длина:</div>
+                                                <input
+                                                    type="number"
+                                                    class="form__input"
+                                                    placeholder="Введите стоимость"
+                                                    min="0"
+                                                    step="0.1"
+                                                    data-type="number"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <div class="form__input-name">Высота:</div>
+                                                <input
+                                                    type="number"
+                                                    class="form__input"
+                                                    placeholder="Введите стоимость"
+                                                    min="0"
+                                                    step="0.1"
+                                                    data-type="number"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form_submit-button button button_big modal-button">
+                                            <span class="button__text">Расчитать</span>
+                                            <div class="button__arrow">
+                                                <div class="button__arrow-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="choiseus">
+                <div class="choiseus__container container">
+                    <div class="choiseus__header header_2 header_2_orange">Почему стоит выбрать именно нас?</div>
+                    <div class="choiseus__slider slider">
+                        <div class="choiseus__viewport slider-viewport">
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="60% center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-1.svg" />
+                                </div>
+                                <div class="iconcard__text">Таможенное оформление груза</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-2.svg" />
+                                </div>
+                                <div class="iconcard__text">Страховка груза</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-3.svg" />
+                                </div>
+                                <div class="iconcard__text">Проверка товара на брак</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-4.svg" />
+                                </div>
+                                <div class="iconcard__text">Доставка в любой город РФ</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-5.svg" />
+                                </div>
+                                <div class="iconcard__text">Консолидация на складе</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-6.svg" />
+                                </div>
+                                <div class="iconcard__text">Ответственное хранение груза</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-7.svg" />
+                                </div>
+                                <div class="iconcard__text">Помощь в оплате товара</div>
+                            </div>
+
+                            <div class="choiseus__item slider-item iconcard">
+                                <div class="iconcard__img" data-sbi="center center / 50% no-repeat" data-sbi-position="top">
+                                    <img src="./src/img/choiseus/icon-8.svg" />
+                                </div>
+                                <div class="iconcard__text">Упаковка, переупаковка, паллетирование груза к международной перевозке</div>
+                            </div>
+                        </div>
+                        <div class="choiseus__pagination pagination">
+                            <ul class="pagination__list">
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="options">
+                <div class="container options__container">
+                    <div class="options__header header_2">Варианты доставки грузов из Китая</div>
+                    <div class="options__slider slider">
+                        <div class="options__viewport slider-viewport">
+                            <div class="options__card optioncard slider-item">
+                                <div class="optioncard__img" data-sbi="center center / cover no-repeat">
+                                    <img src="./src/img/options/card-image-1.jpg" alt="" />
+                                </div>
+                                <div class="optioncard__body">
+                                    <div class="optioncard__header">Авто - обычная</div>
+                                    <ul class="optioncard__list">
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-1.svg" />
+                                            </div>
+                                            <div class="optioncard__text">30-35 дней</div>
+                                        </div>
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-2.svg" />
+                                            </div>
+                                            <div class="optioncard__text">от 5 кг</div>
+                                        </div>
+                                    </ul>
+                                    <div class="optioncard__price">
+                                        <span class="optioncard__price-timing">от</span>
+                                        <span class="optioncard__price-item">0.5</span>
+                                        <span class="optioncard__price-currency">$/кг</span>
+                                    </div>
+                                </div>
+                                <div class="optioncard__buttons">
+                                    <button class="optioncard__button button" data-modal="bid">Оставить заявку</button>
+                                    <button class="optioncard__button button button_transparent">Подробнее</button>
+                                </div>
+                            </div>
+
+                            <div class="options__card optioncard slider-item">
+                                <div class="optioncard__img" data-sbi="center center / cover no-repeat">
+                                    <img src="./src/img/options/card-image-2.jpg" alt="" />
+                                </div>
+                                <div class="optioncard__body">
+                                    <div class="optioncard__header">Авто - ускоренная</div>
+                                    <ul class="optioncard__list">
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-1.svg" />
+                                            </div>
+                                            <div class="optioncard__text">15-25 дней</div>
+                                        </div>
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-2.svg" />
+                                            </div>
+                                            <div class="optioncard__text">от 5 кг</div>
+                                        </div>
+                                    </ul>
+                                    <div class="optioncard__price">
+                                        <span class="optioncard__price-timing">от</span>
+                                        <span class="optioncard__price-item">1.5</span>
+                                        <span class="optioncard__price-currency">$/кг</span>
+                                    </div>
+                                </div>
+                                <div class="optioncard__buttons">
+                                    <button class="optioncard__button button" data-modal="bid">Оставить заявку</button>
+                                    <button class="optioncard__button button button_transparent">Подробнее</button>
+                                </div>
+                            </div>
+
+                            <div class="options__card optioncard slider-item">
+                                <div class="optioncard__img" data-sbi="center center / cover no-repeat">
+                                    <img src="./src/img/options/card-image-3.jpg" alt="" />
+                                </div>
+                                <div class="optioncard__body">
+                                    <div class="optioncard__header">Авиа</div>
+                                    <ul class="optioncard__list">
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-1.svg" />
+                                            </div>
+                                            <div class="optioncard__text">от 7 дней</div>
+                                        </div>
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-2.svg" />
+                                            </div>
+                                            <div class="optioncard__text">от 1 кг</div>
+                                        </div>
+                                    </ul>
+                                    <div class="optioncard__price">
+                                        <span class="optioncard__price-timing">от</span>
+                                        <span class="optioncard__price-item">7</span>
+                                        <span class="optioncard__price-currency">$/кг</span>
+                                    </div>
+                                </div>
+                                <div class="optioncard__buttons">
+                                    <button class="optioncard__button button" data-modal="bid">Оставить заявку</button>
+                                    <button class="optioncard__button button button_transparent">Подробнее</button>
+                                </div>
+                            </div>
+
+                            <div class="options__card optioncard slider-item">
+                                <div class="optioncard__img" data-sbi="center center / cover no-repeat">
+                                    <img src="./src/img/options/card-image-4.jpg" alt="" />
+                                </div>
+                                <div class="optioncard__body">
+                                    <div class="optioncard__header">Ж/д</div>
+                                    <ul class="optioncard__list">
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-1.svg" />
+                                            </div>
+                                            <div class="optioncard__text">30-40 дней</div>
+                                        </div>
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-2.svg" />
+                                            </div>
+                                            <div class="optioncard__text">от 50 кг</div>
+                                        </div>
+                                    </ul>
+                                    <div class="optioncard__price">
+                                        <span class="optioncard__price-timing">от</span>
+                                        <span class="optioncard__price-item">0.5</span>
+                                        <span class="optioncard__price-currency">$/кг</span>
+                                    </div>
+                                </div>
+                                <div class="optioncard__buttons">
+                                    <button class="optioncard__button button" data-modal="bid">Оставить заявку</button>
+                                    <button class="optioncard__button button button_transparent">Подробнее</button>
+                                </div>
+                            </div>
+
+                            <div class="options__card optioncard slider-item">
+                                <div class="optioncard__img" data-sbi="center center / cover no-repeat">
+                                    <img src="./src/img/options/card-image-5.jpg" alt="" />
+                                </div>
+                                <div class="optioncard__body">
+                                    <div class="optioncard__header">Море</div>
+                                    <ul class="optioncard__list">
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-1.svg" />
+                                            </div>
+                                            <div class="optioncard__text">20-25 дней</div>
+                                        </div>
+                                        <div class="optioncard__item">
+                                            <div class="optioncard__icon" data-sbi="center center / contain no-repeat">
+                                                <img src="./src/img/options/icon-2.svg" />
+                                            </div>
+                                            <div class="optioncard__text">от 50 кг</div>
+                                        </div>
+                                    </ul>
+                                    <div class="optioncard__price">
+                                        <span class="optioncard__price-timing">от</span>
+                                        <span class="optioncard__price-item">1</span>
+                                        <span class="optioncard__price-currency">$/кг</span>
+                                    </div>
+                                </div>
+                                <div class="optioncard__buttons">
+                                    <button class="optioncard__button button" data-modal="bid">Оставить заявку</button>
+                                    <button class="optioncard__button button button_transparent">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="options__arrow arrow arrow_prev slider-prev">
+                            <span class="arrow-item"></span>
+                        </a>
+                        <a class="options__arrow arrow arrow_next slider-next">
+                            <span class="arrow-item"></span>
+                        </a>
+                        <div class="options__pagination pagination">
+                            <ul class="pagination__list">
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services">
+                <div class="container services__container">
+                    <div class="services__header header_2 header_2_orange">Услуги</div>
+                    <div class="services__slider slider">
+                        <div class="services__viewport slider-viewport">
+                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="./src/img/services/slider-1.jpg" />
+                                <div class="servicecard__header">Выкуп товара</div>
+                                <div class="servicecard__text">
+                                    Мы можем взять оплату товара в Китае на себя. Если у вас нет валютного счёта, то можете оплатить товар в рублях на
+                                    наш счет в России.
+                                </div>
+                                <button class="servicecard__button button button_transparent">Подробнее</button>
+                            </div>
+
+                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="./src/img/services/slider-2.jpg" />
+                                <div class="servicecard__header">Страховка груза</div>
+                                <div class="servicecard__text">
+                                    Страхование груза от 1 кг. Низкая цена, страхования срока доставки, потерю или порчу товара.
+                                </div>
+                                <button class="servicecard__button button button_transparent">Подробнее</button>
+                            </div>
+
+                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="./src/img/services/slider-3.jpg" />
+                                <div class="servicecard__header">Аренда склада</div>
+                                <div class="servicecard__text">
+                                    Складирование и консолидация ваших грузов на собственных складах временного хранения.
+                                </div>
+                                <button class="servicecard__button button button_transparent">Подробнее</button>
+                            </div>
+
+                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                                <img src="./src/img/services/slider-4.jpg" />
+                                <div class="servicecard__header">Перевод денежных средств</div>
+                                <div class="servicecard__text">
+                                    После уточнения всех параметров мы выставим вам счёт, и вы сможет его оплатить любым удобным способом.
+                                </div>
+                                <button class="servicecard__button button button_transparent">Подробнее</button>
+                            </div>
+                        </div>
+                        <a class="services__arrow arrow arrow_prev slider-prev">
+                            <span class="arrow-item"></span>
+                        </a>
+                        <a class="services__arrow arrow arrow_next slider-next">
+                            <span class="arrow-item"></span>
+                        </a>
+                        <div class="services__pagination pagination">
+                            <ul class="pagination__list">
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+
+                                <li class="pagination__item slider-pagination-item">
+                                    <a href="#" class="pagination__link">
+                                        <span class="pagination__dot"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <div class="about__container container">
+                    <div class="about__left">
+                        <div class="about__header header_2">О компании</div>
+                        <div class="about__text">
+                            <p class="about__paragraph">
+                                Компания Азия Карго - это полный комплекс логистических услуг по доставке грузов из Китая в Россию - сборные грузы и
+                                цельные товарные партии, услуги посредника ТаоБао, КАРГО Китай-Россия. Для вашего удобства есть тарифы на лёгкий и
+                                тяжелый куб. Мы работаем на рынке более 4 лет, а руководители компании занимаются логистикой уже более 11 лет.
+                            </p>
+                            <p class="about__paragraph">
+                                Мы стремимся предоставить лучшие условия доставки и лучший сервис своим клиентам. Выбирая нас - вы выбираете
+                                качественную доставку оптимальную по цене и времени! Убедитесь в этом сами!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__right">
+                        <div class="about__bgimg"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="questions">
+                <div class="questions__container container">
+                    <div class="questions__header header_2 header_2_orange">Часто задаваемые вопросы</div>
+                    <div class="questions__body">
+                        <div class="questions__left">
+                            <ul class="questions__accordeon accordeon">
+                                <li class="accordeon__item accordeon-item active">
+                                    <div class="accordeon__header">
+                                        <span class="accordeon__head">Как рассчитывается стоимость доставки?</span>
+                                        <button class="accordeon__button button__arrow">
+                                            <div class="button__arrow-line"></div>
+                                        </button>
+                                    </div>
+                                    <div class="accordeon__text accordeon-changed">Стоимость зависит от объема, веса и способа доставки.</div>
+                                </li>
+
+                                <li class="accordeon__item accordeon-item">
+                                    <div class="accordeon__header">
+                                        <span class="accordeon__head">Как происходит оплата за доставку груза?</span>
+                                        <button class="accordeon__button button__arrow">
+                                            <div class="button__arrow-line"></div>
+                                        </button>
+                                    </div>
+                                    <div class="accordeon__text accordeon-changed">
+                                        После уточнения всех параметров мы выставим вам счёт, и вы сможет его оплатить любым удобным способом.
+                                    </div>
+                                </li>
+
+                                <li class="accordeon__item accordeon-item">
+                                    <div class="accordeon__header">
+                                        <span class="accordeon__head">Как быстро оформить заказ на доставку из Китая в Россию?</span>
+                                        <button class="accordeon__button button__arrow">
+                                            <div class="button__arrow-line"></div>
+                                        </button>
+                                    </div>
+                                    <div class="accordeon__text accordeon-changed">
+                                        Напишите нам в мессенджер параметры груза и мы подберем для вам оптимальный вариант доставки из Китая в
+                                        Россию.
+                                    </div>
+                                </li>
+
+                                <li class="accordeon__item accordeon-item">
+                                    <div class="accordeon__header">
+                                        <span class="accordeon__head">Можно ли через вас оплатить товар поставщику?</span>
+                                        <button class="accordeon__button button__arrow">
+                                            <div class="button__arrow-line"></div>
+                                        </button>
+                                    </div>
+                                    <div class="accordeon__text accordeon-changed">
+                                        Да, мы предоставляем такую услугу, мы можем взять оплату товара в Китае на себя. Если у вас нет валютного
+                                        счёта, то можете оплатить товар в рублях на наш счет в России.
+                                    </div>
+                                </li>
+
+                                <li class="accordeon__item accordeon-item">
+                                    <div class="accordeon__header">
+                                        <span class="accordeon__head">В чём особенность КАРГО доставки из Китая</span>
+                                        <button class="accordeon__button button__arrow">
+                                            <div class="button__arrow-line"></div>
+                                        </button>
+                                    </div>
+                                    <div class="accordeon__text accordeon-changed">
+                                        Карго доставка является комплексом услуг, которые также включает логистику, таможенное оформление,
+                                        консолидацию и хранение. Карго позволит вам заказать практически любые товары из Китая и не беспокоиться о
+                                        таможенном оформлении.
+                                    </div>
+                                </li>
+
+                                <li class="accordeon__item accordeon-item">
+                                    <div class="accordeon__header">
+                                        <span class="accordeon__head">Какой срок доставки из Китая?</span>
+                                        <button class="accordeon__button button__arrow">
+                                            <div class="button__arrow-line"></div>
+                                        </button>
+                                    </div>
+                                    <div class="accordeon__text accordeon-changed">
+                                        Время доставки зависит от многих факторов. В среднем от 15 до 40 дней. На срок могут повлиять выбор
+                                        транспортного средства (авиа, авто, жд и тд.), праздники, эпидемиологическая ситуация на таможне.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="questions__right">
+                            <div class="questions__form-name">Остались вопросы?</div>
+                            <div class="questions__form-text">Оставьте заявку и наш менеджер ответит вам в ближайшее время</div>
+                            <form class="questions__form form">
+                                <div class="form__container">
+                                    <div class="slider-item form__container">
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <input
+                                                    type="text"
+                                                    class="form__input"
+                                                    placeholder="Введите имя"
+                                                    data-type="name"
+                                                    data-storage="name"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <input
+                                                    type="tel"
+                                                    class="form__input"
+                                                    placeholder="+7(___)___-__-__"
+                                                    data-type="tel"
+                                                    data-storage="tel"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double">
+                                            <label class="form__label">
+                                                <input
+                                                    type="email"
+                                                    class="form__input"
+                                                    placeholder="Введите e-mail"
+                                                    data-type="email"
+                                                    data-storage="email"
+                                                />
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double form__section_fill form__section_margin-bottom">
+                                            <label class="form__label">
+                                                <textarea
+                                                    class="form__input form__input_area"
+                                                    placeholder="Подробности о товаре, описание, количество"
+                                                    data-storage="comment"
+                                                ></textarea>
+                                            </label>
+                                        </div>
+
+                                        <div class="form__section form__section_double form__section_space-between">
+                                            <button class="form_submit-button button button_big form-submit">
+                                                <span class="button__text">Отправить запрос</span>
+                                                <div class="button__arrow">
+                                                    <div class="button__arrow-line"></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ready">
+                <div class="ready__container container">
+                    <div class="ready__header header_2">
+                        <div class="ready__header-text">Готовы к сотрудничеству?</div>
+                        <div class="ready__subheader">Зарегистрируйте груз!</div>
+                    </div>
+
+                    <div class="ready__body">
+                        <div class="ready__body-text">
+                            <p class="ready__body-paragraph">
+                                • Для того, чтобы начать сотрудничество, необходимо оформить груз указав информацию о содержимом груза, его стоимость
+                                и количество. А так-же прикрепив фотографии к заявке.
+                            </p>
+                            <p class="ready__body-paragraph">
+                                • Если требуется проверка товара на соответсвие количеству, то при оформлении груза на нашем сайте укажите это в графе
+                                "Примечание". Данная услуга платная и составляет 3 юаня за одну позицию в заказе. Любые дополнительные проверки груза
+                                обсуждаются индивидуально в том числе и их стоимость.
+                            </p>
+                            <p class="ready__body-paragraph">
+                                • До отправки груза на наш склад в Китае обязательно позаботьтесь о том, чтобы сделать маркировку, с номером Вашего
+                                заказа у нас на сайте, для каждой внешней коробки, чтобы мы смогли определить именно Ваш груз. Если у Вас нет
+                                возможности сделать это самостоятельно, то попросите об этом своего поставщика.
+                            </p>
+                        </div>
+                        <div class="ready__body-img ready__body-img_order" data-sbi="center center / cover no-repeat">
+                            <img src="./src/img/ready/img-1.jpg" />
+                        </div>
+
+                        <div class="ready__body-img" data-sbi="center center / cover no-repeat">
+                            <img src="./src/img/ready/шьп-2.jpeg" />
+                        </div>
+                        <div class="ready__body-text">
+                            <p class="ready__body-paragraph">
+                                • После отправки груза на наш склад в Китае, Вам обязательно нужно указать трек-номер для отслеживания посылок по
+                                Китаю для каждой позиции в заказе. Внести трек-номер можно на странице заказа. Трек-номер - это ещё одна мера для
+                                идентификации Вашего груза на нашем складе.
+                            </p>
+                            <p class="ready__body-paragraph">
+                                • Если Вы оформили груз по нашей инструкции и сделали все правильно, то при получении Вашего груза на складе в Китае
+                                статус заказа изменится на "На складе".
+                            </p>
+                            <button class="ready__button button button_big" data-modal="bid">
+                                <span class="button__text">Отправить запрос</span>
+                                <div class="button__arrow">
+                                    <div class="button__arrow-line"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="footer__container container">
+                    <div class="footer__address address">
+                        <div class="address__logo logo">
+                            <img src="/src/img/logo.svg" alt="Master Tao" class="logo__img" />
+                        </div>
+                        <a href="tel:+78006001869" class="address__tel address__item">8(800)600-18-69</a>
+                        <a href="email:info@cargoasia.info" class="address__mail address__item">info@cargoasia.info</a>
+                        <div class="address__item">Адрес в Китае:</div>
+                        <div class="address__item">浙江省金华市义乌市后宅街道洪华小区5 栋一单元一楼RT789库房 高建军 电话15966660379</div>
+                        <ul class="address__socials socials">
+                            <li class="socials__item">
+                                <a href="#" class="socials__link"><img src="/src/img/footer/socials-1.svg" alt="#" class="socials__img" /></a>
+                            </li>
+                            <li class="socials__item">
+                                <a href="#" class="socials__link"><img src="/src/img/footer/socials-2.svg" alt="#" class="socials__img" /></a>
+                            </li>
+                            <li class="socials__item">
+                                <a href="#" class="socials__link"><img src="/src/img/footer/socials-3.svg" alt="#" class="socials__img" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="footer__navlist navlist">
+                        <li class="navlist__item">
+                            <div class="navlist__header">Грузоперевозки</div>
+                            <ul class="navlist__sublist">
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="choiseus">Цены и сроки</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="services">Услуги</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="about">О компании</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="footer">Контакты</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="order">Оформить груз </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="navlist__item">
+                            <div class="navlist__header">Услуги</div>
+                            <ul class="navlist__sublist">
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="services:1">Выкуп товара </a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="services:2">Страховка груза </a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="services:3">Аренда склада </a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="services:4">Перевод денежных средств </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="navlist__item">
+                            <div class="navlist__header">Информация</div>
+                            <ul class="navlist__sublist">
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="questions:1">Расчет стоимости</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="questions:2">Оплата за доставку</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="questions:3">Быстрый заказ</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="questions:4">Расчет с поставщиком</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="questions:5">КАРГО доставка</a>
+                                </li>
+                                <li class="navlist__subitem">
+                                    <a href="#" class="navlist__link" data-anchor="questions:6">Сроки</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        <script type="module" src="./js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+.menu {
+    &__item {
+    }
+
+    &__link {
+        font-size: $fsz / 3 * 4;
+        line-height: 146%;
+        color: $color_white_1;
+    }
+
+    @media (max-width: $width_3) {
+        font-size: $fsz * 2;
+        line-height: 222%;
+
+        &__item {
+            transition: all $transition_menu / 2 $transition_menu / 2;
+        }
+    }
+}

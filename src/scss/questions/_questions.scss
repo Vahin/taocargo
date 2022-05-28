@@ -1,0 +1,201 @@
+.questions {
+    &__container {
+        padding: 30px 20px 100px;
+    }
+
+    &__header {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    &__left {
+        flex: 0 0 63%;
+
+        @media (max-width: $width_3) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &__accordeon {
+    }
+
+    &__right {
+        flex: 0 0 34%;
+        background: $color_bg_secondary;
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 40px;
+        box-shadow: $shadow_1;
+
+        @media (max-width: $width_3) {
+            flex: 0 0 100%;
+            margin-top: 40px;
+        }
+    }
+
+    &__form-name {
+        font-weight: 700;
+        font-size: $fsz * 2;
+        line-height: 126%;
+        color: $color_white_1;
+        margin-bottom: 8px;
+    }
+
+    &__form-text {
+        font-size: $fsz / 12 * 17;
+        line-height: 126%;
+        color: $color_white_1;
+        margin-bottom: 23px;
+    }
+
+    &__form {
+        padding: 0;
+    }
+}
+
+.accordeon {
+    &__item {
+        margin-bottom: 16px;
+        border: 1px solid #3a444e;
+        border-radius: 10px;
+        transition: all $transition_middle;
+        padding-bottom: 18px;
+        cursor: pointer;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__header {
+        padding: 19px 50px 0 34px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all $transition_middle;
+        position: relative;
+    }
+
+    &__head {
+        font-weight: 700;
+        font-size: $fsz / 2 * 3;
+        line-height: 124.5%;
+        color: $color_white_1;
+        transition: all $transition_middle;
+    }
+
+    &__button {
+        display: block;
+        transition: all $transition_middle;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translate(0, -50%);
+    }
+
+    &__text {
+        transition: all $transition_middle;
+        font-size: $fsz / 12 * 17;
+        line-height: 144.5%;
+        color: $color_white_1;
+        min-height: 0px;
+        height: 0;
+        overflow: hidden;
+        padding: 0 65px 0 34px;
+    }
+
+    &__item.active {
+        background-color: $color_white_1;
+    }
+
+    &__item.active &__head {
+        color: $color_bg_main;
+    }
+
+    &__item.active &__button {
+    }
+
+    &__item.active &__text {
+        color: $color_bg_main;
+    }
+}
+
+.accordeon__item .button {
+    &__arrow {
+        border-color: $color_white_1;
+        transition: all $transition_middle;
+    }
+
+    &__arrow-line {
+        border-color: $color_white_1;
+        background-color: $color_white_1;
+
+        &::after,
+        &::before {
+            border-color: $color_white_1;
+        }
+    }
+}
+
+.accordeon__item.active .button {
+    &__arrow {
+        transform: rotate(-90deg);
+
+        border-color: $color_orange_1;
+    }
+
+    &__arrow-line {
+        border-color: $color_orange_1;
+        background-color: $color_orange_1;
+
+        &::after,
+        &::before {
+            border-color: $color_orange_1;
+        }
+    }
+}
+
+.questions .form {
+    &_submit-button {
+    }
+
+    &__container {
+        padding: 0;
+        grid-template-rows: auto;
+    }
+
+    &__section {
+        &_double {
+        }
+
+        &_fill {
+        }
+
+        &_margin-bottom {
+            margin: 0;
+        }
+
+        &_space-between {
+        }
+    }
+
+    &__label {
+    }
+
+    &__input-name {
+    }
+
+    &__input {
+        &_area {
+        }
+    }
+}
+.slider-item {
+}
