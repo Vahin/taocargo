@@ -76,22 +76,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url("/src/fonts/ProximaNova-Regular.ttf"), url("/src/fonts/ProximaNova-Regular.eot"), url("/src/fonts/ProximaNova-Regular.woff");
+  font-family: "Proxima Nova";
+  src: url("../src/fonts/ProximaNova-Regular.ttf"), url("../src/fonts/ProximaNova-Regular.eot"), url("../src/fonts/ProximaNova-Regular.woff");
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url("/src/fonts/ProximaNova-Bold.ttf"), url("/src/fonts/ProximaNova-Bold.eot"), url("/src/fonts/ProximaNova-Bold.woff");
+  font-family: "Proxima Nova";
+  src: url("../src/fonts/ProximaNova-Bold.ttf"), url("../src/fonts/ProximaNova-Bold.eot"), url("../src/fonts/ProximaNova-Bold.woff");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Proxima Nova';
-  src: url("/src/fonts/ProximaNova-Semibold.ttf"), url("/src/fonts/ProximaNova-Semibold.eot"), url("/src/fonts/ProximaNova-Semibold.woff");
+  font-family: "Proxima Nova";
+  src: url("../src/fonts/ProximaNova-Semibold.ttf"), url("../src/fonts/ProximaNova-Semibold.eot"), url("../src/fonts/ProximaNova-Semibold.woff");
   font-style: normal;
   font-weight: 600;
 }
@@ -2062,7 +2062,7 @@ section {
   left: 5%;
   width: 105%;
   height: 105%;
-  background: url("/src/img/about/board.png") center center/100% no-repeat;
+  background: url("../src/img/about/board.png") center center/100% no-repeat;
 }
 
 .about__bgimg::after {
@@ -2072,7 +2072,7 @@ section {
   left: -25%;
   width: 100%;
   height: 100%;
-  background: url("/src/img/about/pen.png") center center/100% no-repeat;
+  background: url("../src/img/about/pen.png") center center/100% no-repeat;
 }
 
 .questions__container {
