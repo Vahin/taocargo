@@ -1,26 +1,20 @@
 @font-face {
-    font-family: 'Proxima Nova';
-    src:    url('/src/fonts/ProximaNova-Regular.ttf'),
-            url('/src/fonts/ProximaNova-Regular.eot'),
-            url('/src/fonts/ProximaNova-Regular.woff');
+    font-family: "Proxima Nova";
+    src: url("../src/fonts/ProximaNova-Regular.ttf"), url("../src/fonts/ProximaNova-Regular.eot"), url("../src/fonts/ProximaNova-Regular.woff");
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src:    url('/src/fonts/ProximaNova-Bold.ttf'),
-            url('/src/fonts/ProximaNova-Bold.eot'),
-            url('/src/fonts/ProximaNova-Bold.woff');
+    font-family: "Proxima Nova";
+    src: url("../src/fonts/ProximaNova-Bold.ttf"), url("../src/fonts/ProximaNova-Bold.eot"), url("../src/fonts/ProximaNova-Bold.woff");
     font-style: normal;
     font-weight: 700;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src:    url('/src/fonts/ProximaNova-Semibold.ttf'),
-            url('/src/fonts/ProximaNova-Semibold.eot'),
-            url('/src/fonts/ProximaNova-Semibold.woff');
+    font-family: "Proxima Nova";
+    src: url("../src/fonts/ProximaNova-Semibold.ttf"), url("../src/fonts/ProximaNova-Semibold.eot"), url("../src/fonts/ProximaNova-Semibold.woff");
     font-style: normal;
     font-weight: 600;
 }
