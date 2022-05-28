@@ -1334,7 +1334,7 @@ section {
   height: 100%;
   bottom: 0;
   left: 57%;
-  background: url(/src/img/calculate/man.png) 262% bottom/110% no-repeat;
+  background: url(../src/img/calculate/man.png) 262% bottom/110% no-repeat;
 }
 
 @media (max-width: 1278px) {

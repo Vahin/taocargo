@@ -96,11 +96,11 @@ export let formMixin = {
             return result;
         }
 
-        if (type == "file") {
+        /* if (type == "file") {
             doCallbacks(item.value);
 
             return item.value;
-        }
+        } */
 
         if (type == "tel") {
             let regex = /\+7\(\d{3}\)\d{3}-\d{2}-\d{2}/i;
