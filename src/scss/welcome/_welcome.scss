@@ -1,31 +1,20 @@
 .welcome {
     box-shadow: $shadow_1;
-    /* min-height: 87vh; */
-    position: relative;
     overflow: hidden;
 
-    /* @media (max-width: $width_3) {
-        min-height: 100vh;
-    } */
-
-    &__slider {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-
-        touch-action: pan-y;
-        user-select: none;
+    &__swiper {
+        height: 87vh;
     }
 
     &__screen {
-        height: 100%;
-        background: linear-gradient(94.52deg, rgba(4, 5, 17, 0.72) 1.89%, rgba(88, 88, 88, 0) 65.32%);
+        background-image: linear-gradient(94.52deg, rgba(4, 5, 17, 0.72) 1.89%, rgba(88, 88, 88, 0) 65.32%);
+        min-height: 100%;
+        display: flex;
     }
 
     &__container {
-        height: 100%;
+        flex: 0 1 $width_2;
+        min-height: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -76,154 +65,127 @@
     }
 }
 
-.welcome__slider .slider {
-    &__viewport {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+// Стили для swiper'a
 
-        overflow: hidden;
-    }
+.welcome__swiper .swiper-slide {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-    &__track {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+.welcome__swiper .swiper-lazy-preloader {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    border: 5px solid $color_bg_secondary;
+    border-top-color: transparent;
+}
 
-        display: flex;
-    }
+// Стили навигации swiper'a
 
-    &__arrow {
-        display: block;
-        position: absolute;
-        width: 10%;
-        height: 100%;
-        bottom: 0;
-        transition: all $transition_fast;
-        cursor: pointer;
+.welcome__swiper .swiper-custom-button {
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    bottom: 0;
+    transition: all $transition_fast;
+    cursor: pointer;
+    z-index: 11;
+}
 
-        &_left {
-            left: 0;
-        }
+.welcome__swiper .swiper-custom-button-prev {
+    left: 0;
 
-        &_right {
-            right: 0;
-        }
-
-        &_left:hover {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-        }
-
-        &_right:hover {
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-        }
-
-        @media (max-width: $width_1) {
-            width: 50px;
-            height: 50px;
-            bottom: 20px;
-            border-radius: 15px;
-
-            &_left {
-                left: 20px;
-            }
-
-            &_right {
-                right: 20px;
-            }
-        }
-
-        &.disable:hover {
-            background: none;
-            cursor: auto;
-        }
-
-        @media (max-width: $width_4) {
-            display: none;
-        }
-    }
-
-    &__arrow-item {
-        position: absolute;
-        display: block;
-        width: 50px;
-        height: 50px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-        }
-    }
-
-    &__arrow_left .slider__arrow-item {
-        &::after {
-            border-left: 2px solid $color_white_1;
-            border-bottom: 2px solid $color_white_1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-25%, -50%) rotate(45deg);
-        }
-    }
-
-    &__arrow_right .slider__arrow-item {
-        &::after {
-            border-right: 2px solid $color_white_1;
-            border-bottom: 2px solid $color_white_1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-75%, -50%) rotate(-45deg);
-        }
-    }
-
-    &__pagination {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translate(-50%, 0);
+    &:hover {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
     }
 }
 
-.pagination {
-    &__list {
-        display: flex;
+.welcome__swiper .swiper-custom-button-next {
+    right: 0;
+
+    &:hover {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+@media (max-width: $width_1) {
+    .welcome__swiper .swiper-custom-button {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        border-radius: 15px;
     }
 
-    &__item {
+    .welcome__swiper .swiper-custom-button-prev {
+        left: 20px;
     }
 
-    &__link {
+    .welcome__swiper .swiper-custom-button-next {
+        right: 20px;
+    }
+}
+
+@media (max-width: $width_4) {
+    .welcome__swiper .swiper-custom-button {
+        display: none;
+    }
+}
+
+.welcome__swiper .swiper-custom-button-disabled:hover {
+    background: none;
+    cursor: auto;
+}
+
+.welcome__swiper .swiper-custom-button__arrow {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::after {
+        content: "";
         display: block;
-        width: 100%;
-        height: 100%;
-        padding: 13px;
-        position: relative;
-
-        &::after {
-            content: "";
-            display: block;
-            width: 8px;
-            height: 8px;
-            border: 2px solid $color_white_1;
-            border-radius: 50%;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        position: absolute;
+        width: 30px;
+        height: 30px;
     }
+}
 
-    &__item.active &__link::after {
-        background-color: $color_white_1;
+.welcome__swiper .swiper-custom-button-prev .swiper-custom-button__arrow::after {
+    border-left: 2px solid $color_white_1;
+    border-bottom: 2px solid $color_white_1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%) rotate(45deg);
+}
+
+.welcome__swiper .swiper-custom-button-next .swiper-custom-button__arrow::after {
+    border-right: 2px solid $color_white_1;
+    border-bottom: 2px solid $color_white_1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%) rotate(-45deg);
+}
+
+// Стили пагинации swiper'a
+
+.swiper-pagination-bullet {
+    background: none;
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+    border: 2px solid $color_white_1;
+
+    .swiper-pagination-clickable & {
+        cursor: pointer;
     }
+}
+
+.swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: $color_white_1;
 }

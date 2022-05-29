@@ -2,7 +2,6 @@
 import { Burger } from "./burger.js";
 import { HideOnScroll } from "./hideonscroll.js";
 import { SetBGImage } from "./sbi.js";
-import { WelcomeSlider } from "./welcomeslider.js";
 import { FormSlider } from "./formslider.js";
 import { FormModal } from "./modal.js";
 import { BreakpointsSlider } from "./breakpointsslider.js";
@@ -47,22 +46,20 @@ addClassOnResize({
     size: 950,
 });
 
-const wSlider = new WelcomeSlider({
-    sliderSelector: ".welcome__slider",
-    flexArrows: {
-        containerSelector: ".welcome__container",
-        spotPoint: 1530,
+const welcomeSlider = new Swiper(".welcome__swiper", {
+    lazy: {
+        loadPrevNext: true,
     },
-    sectionSelector: ".welcome",
-    slidesCount: 1,
-    slidesMargin: 0,
-    slidesInterval: 0,
-    transition: 600,
-    viewportHeight: true,
-    needArrowControl: true,
-    needPagination: true,
-    needClickablePagination: true,
-    needSwipeControl: true,
+    navigation: {
+        prevEl: ".swiper-custom-button-prev",
+        nextEl: ".swiper-custom-button-next",
+        disabledClass: "swiper-custom-button-disabled",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    speed: 600,
 });
 
 new FormSlider({

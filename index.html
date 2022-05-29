@@ -50,11 +50,12 @@
             </header>
 
             <section class="welcome">
-                <div class="welcome__slider slider">
-                    <div class="slider__viewport slider-viewport">
-                        <div class="slider-item">
-                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
-                                <img src="./src/img/welcome/slider-1.jpg" alt="" />
+                <div class="welcome__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div data-background="./src/img/welcome/slider-1.jpg" class="swiper-slide swiper-lazy">
+                            <div class="swiper-lazy-preloader"></div>
+
+                            <div class="welcome__screen">
                                 <div class="welcome__container container">
                                     <div class="welcome__main">
                                         <div class="welcome__header">Прямое КАРГО из Китая</div>
@@ -72,9 +73,10 @@
                             </div>
                         </div>
 
-                        <div class="slider-item">
-                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
-                                <img src="./src/img/welcome/slider-2.jpg" alt="" />
+                        <div data-background="./src/img/welcome/slider-2.jpg" class="swiper-slide swiper-lazy">
+                            <div class="swiper-lazy-preloader"></div>
+
+                            <div class="welcome__screen">
                                 <div class="welcome__container container">
                                     <div class="welcome__main">
                                         <div class="welcome__header">Гарантируем сроки!</div>
@@ -92,9 +94,10 @@
                             </div>
                         </div>
 
-                        <div class="slider-item">
-                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
-                                <img src="./src/img/welcome/slider-3.jpg" alt="" />
+                        <div data-background="./src/img/welcome/slider-3.jpg" class="swiper-slide swiper-lazy">
+                            <div class="swiper-lazy-preloader"></div>
+
+                            <div class="welcome__screen">
                                 <div class="welcome__container container">
                                     <div class="welcome__main">
                                         <div class="welcome__header">Выкуп товара с ТаоБао, 1688</div>
@@ -112,7 +115,28 @@
                             </div>
                         </div>
 
-                        <div class="slider-item">
+                        <div data-background="./src/img/welcome/slider-4.jpg" class="swiper-slide swiper-lazy">
+                            <div class="swiper-lazy-preloader"></div>
+
+                            <div class="welcome__screen">
+                                <div class="welcome__container container">
+                                    <div class="welcome__main">
+                                        <div class="welcome__header">Экспресс авто доставка</div>
+
+                                        <div class="welcome__text">Доставка автотранспортом из Китая в Россию от 15 дней, от $0,5/кг</div>
+
+                                        <div class="welcome__request-button button button_big" data-modal="bid">
+                                            <span class="button__text">Расчитать стоимость</span>
+                                            <div class="button__arrow">
+                                                <div class="button__arrow-line"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="swiper-item">
                             <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
                                 <img src="./src/img/welcome/slider-4.jpg" alt="" />
                                 <div class="welcome__container container">
@@ -130,43 +154,17 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <a class="slider__arrow slider__arrow_left slider-prev">
-                        <span class="slider__arrow-item"></span>
-                    </a>
-                    <a class="slider__arrow slider__arrow_right slider-next">
-                        <span class="slider__arrow-item"></span>
-                    </a>
-
-                    <div class="slider__pagination pagination">
-                        <ul class="pagination__list">
-                            <li class="pagination__item slider-pagination-item">
-                                <a href="#" class="pagination__link">
-                                    <span class="pagination__dot"></span>
-                                </a>
-                            </li>
-
-                            <li class="pagination__item slider-pagination-item">
-                                <a href="#" class="pagination__link">
-                                    <span class="pagination__dot"></span>
-                                </a>
-                            </li>
-
-                            <li class="pagination__item slider-pagination-item">
-                                <a href="#" class="pagination__link">
-                                    <span class="pagination__dot"></span>
-                                </a>
-                            </li>
-
-                            <li class="pagination__item slider-pagination-item">
-                                <a href="#" class="pagination__link">
-                                    <span class="pagination__dot"></span>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="swiper-custom-button swiper-custom-button-prev">
+                        <span class="swiper-custom-button__arrow"></span>
                     </div>
+                    <div class="swiper-custom-button swiper-custom-button-next">
+                        <span class="swiper-custom-button__arrow"></span>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
 
