@@ -46,6 +46,8 @@ addClassOnResize({
     size: 950,
 });
 
+// --------- Слайдер титульного экрана --------- //
+
 const welcomeSlider = new Swiper(".welcome__swiper", {
     lazy: {
         loadPrevNext: true,
@@ -60,7 +62,51 @@ const welcomeSlider = new Swiper(".welcome__swiper", {
         clickable: true,
     },
     speed: 600,
+    on: {
+        resize: () => {
+            setNavWidth(".swiper-custom-button");
+            setSwiperHeight(".welcome__swiper");
+        },
+    },
 });
+
+function getMarginLeft(selector1, selector2, min) {
+    let el1 = document.querySelector(selector1);
+    let el2 = document.querySelector(selector2);
+
+    let margin = el1.getBoundingClientRect().left - el2.getBoundingClientRect().left;
+    margin = Math.abs(margin);
+
+    return margin < min ? min : margin;
+}
+
+function setNavWidth(selector) {
+    let navs = document.querySelectorAll(selector);
+
+    for (let nav of navs) {
+        nav.style.width = getMarginLeft(".swiper-wrapper", ".welcome__container", 50) + "px";
+    }
+}
+
+function setSwiperHeight(selector) {
+    let headerHeight = document.querySelector(".header").offsetHeight;
+    let windowHeight = document.documentElement.clientHeight;
+    let h;
+
+    if (document.documentElement.offsetWidth <= 950) {
+        h = windowHeight;
+    } else {
+        h = windowHeight - headerHeight;
+    }
+
+    document.querySelector(selector).style.height = h + "px";
+}
+
+setSwiperHeight(".welcome__swiper");
+
+setNavWidth(".swiper-custom-button");
+
+// ---------------------------------------------- //
 
 new FormSlider({
     sliderSelector: ".order__slider",

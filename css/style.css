@@ -1074,10 +1074,7 @@ section {
   -webkit-box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);
           box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);
   overflow: hidden;
-}
-
-.welcome__swiper {
-  height: 87vh;
+  z-index: 12;
 }
 
 .welcome__screen {

@@ -1,9 +1,10 @@
 .welcome {
     box-shadow: $shadow_1;
     overflow: hidden;
+    z-index: 12;
 
     &__swiper {
-        height: 87vh;
+        // height: 87vh;
     }
 
     &__screen {
