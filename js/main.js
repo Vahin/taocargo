@@ -325,6 +325,8 @@ const choiseusSwiper = new Swiper(".choiseus__slider", {
     },
 });
 
+// --------------------------------------- //
+
 new OptionSlider({
     sliderSelector: ".options__slider",
 

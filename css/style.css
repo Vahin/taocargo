@@ -1551,12 +1551,14 @@ section {
 
 .iconcard__img {
   position: absolute;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 60%;
   height: 60%;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-45%, -50%);
-          transform: translate(-45%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .iconcard__text {
