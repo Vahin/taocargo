@@ -66,7 +66,7 @@ const welcomeSlider = new Swiper(".welcome__swiper", {
     speed: 600,
     on: {
         resize: () => {
-            setNavWidth(".swiper-custom-button");
+            setNavWidth(".swiper-custom-button", ".swiper-wrapper", ".welcome__container");
             setSwiperHeight(".welcome__swiper");
         },
     },
@@ -82,11 +82,11 @@ function getMarginLeft(selector1, selector2, min) {
     return margin < min ? min : margin;
 }
 
-function setNavWidth(selector) {
+function setNavWidth(selector, x, y) {
     let navs = document.querySelectorAll(selector);
 
     for (let nav of navs) {
-        nav.style.width = getMarginLeft(".swiper-wrapper", ".welcome__container", 50) + "px";
+        nav.style.width = getMarginLeft(x, y, 50) + "px";
     }
 }
 
@@ -106,7 +106,7 @@ function setSwiperHeight(selector) {
 
 setSwiperHeight(".welcome__swiper");
 
-setNavWidth(".swiper-custom-button");
+setNavWidth(".swiper-custom-button", ".swiper-wrapper", ".welcome__container");
 
 // --------------------------------------------- //
 
@@ -327,42 +327,68 @@ const choiseusSwiper = new Swiper(".choiseus__slider", {
 
 // --------------------------------------- //
 
-new OptionSlider({
-    sliderSelector: ".options__slider",
+const optionSlider = new Swiper(".options__slider", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
-    breakpoints: [
-        {
-            maxClientWidth: 99999,
-            slidesCount: 3,
-            slidesMargin: 30,
-            viewportHeight: false,
-            needArrowControl: true,
-            needPagination: false,
-            needClickablePagination: false,
-            needSwipeControl: true,
+    spaceBetween: 30,
+    slidesPerView: 1,
+
+    breakpoints: {
+        750: {
+            spaceBetween: 30,
+            slidesPerView: 2,
         },
-        {
-            maxClientWidth: 1140,
-            slidesCount: 2,
-            slidesMargin: 30,
-            viewportHeight: false,
-            needArrowControl: false,
-            needPagination: true,
-            needClickablePagination: true,
-            needSwipeControl: true,
+        1270: {
+            spaceBetween: 30,
+            slidesPerView: 3,
         },
-        {
-            maxClientWidth: 950,
-            slidesCount: 1,
-            slidesMargin: 30,
-            viewportHeight: false,
-            needArrowControl: false,
-            needPagination: true,
-            needClickablePagination: true,
-            needSwipeControl: true,
-        },
-    ],
+    },
 });
+
+if (document.documentElement.clientWidth >= 1300) {
+    setNavWidth(".swiper-options-button", ".options", ".options__slider");
+}
+
+window.addEventListener("resize", () => {
+    if (document.documentElement.clientWidth >= 1300) {
+        setNavWidth(".swiper-options-button", ".options", ".options__slider");
+    }
+});
+
+const optionButtonPrev = document.querySelector(".swiper-options-button-prev");
+const optionButtonNext = document.querySelector(".swiper-options-button-next");
+
+function toggleDisabledClass(prev, next, slider) {
+    if (slider.isBeginning) {
+        prev.classList.add("disabled");
+    } else {
+        prev.classList.remove("disabled");
+    }
+
+    if (slider.isEnd) {
+        next.classList.add("disabled");
+    } else {
+        next.classList.remove("disabled");
+    }
+}
+
+toggleDisabledClass(optionButtonPrev, optionButtonNext, optionSlider);
+
+optionSlider.on("activeIndexChange", () => {
+    toggleDisabledClass(optionButtonPrev, optionButtonNext, optionSlider);
+});
+
+optionButtonPrev.addEventListener("click", () => {
+    optionSlider.slidePrev();
+});
+optionButtonNext.addEventListener("click", () => {
+    optionSlider.slideNext();
+});
+
+// ------------------------------------------ //
 
 const serviceSlider = new OptionSlider({
     sliderSelector: ".services__slider",

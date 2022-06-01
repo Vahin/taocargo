@@ -1,4 +1,5 @@
 .options {
+    position: relative;
     &__container {
         padding: 100px 20px;
     }
@@ -9,36 +10,12 @@
     }
 
     &__slider {
-        position: relative;
+        padding-bottom: 40px;
     }
+}
 
-    &__viewport {
-        display: flex;
-        overflow: hidden;
-    }
-
-    &__card {
-        flex: 0 0 30%;
-    }
-
-    &__arrow {
-        display: block;
-
-        @media (max-width: $width_2) {
-            display: none;
-        }
-    }
-
-    &__pagination {
-        display: none;
-        @media (max-width: $width_2) {
-            display: block;
-        }
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        bottom: -70px;
-    }
+.options .swiper-pagination {
+    bottom: 0;
 }
 
 .optioncard {
@@ -126,69 +103,76 @@
     }
 }
 
-.arrow {
+.options .swiper-options-button {
     position: absolute;
-    top: 50%;
-    height: 120%;
-    width: 20%;
-    transform: translate(0, -50%);
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: 11;
+    transition: all $transition_fast;
     cursor: pointer;
 
-    &-item {
-        position: absolute;
+    @media (max-width: 1300px) {
+        display: none;
+    }
+}
+
+.options .swiper-options-button-prev {
+    left: 0;
+
+    &:hover {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+.options .swiper-options-button-next {
+    right: 0;
+
+    &:hover {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+.options .swiper-options-button.disabled {
+    opacity: 0.8;
+}
+
+.options .swiper-options-button.disabled:hover {
+    background: none;
+    cursor: auto;
+}
+
+.options .swiper-options-button__arrow {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::after {
+        content: "";
         display: block;
-        width: 50px;
-        height: 50px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 30px;
-            height: 30px;
-        }
+        position: absolute;
+        width: 30px;
+        height: 30px;
     }
+}
 
-    &_prev {
-        right: 100%;
-    }
+.options .swiper-options-button-prev .swiper-options-button__arrow::after {
+    border-left: 2px solid $color_white_1;
+    border-bottom: 2px solid $color_white_1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%) rotate(45deg);
+}
 
-    &_next {
-        left: 100%;
-    }
-
-    &_prev &-item::after {
-        border-left: 2px solid $color_white_1;
-        border-bottom: 2px solid $color_white_1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-25%, -50%) rotate(45deg);
-    }
-
-    &_next &-item::after {
-        border-right: 2px solid $color_white_1;
-        border-bottom: 2px solid $color_white_1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-75%, -50%) rotate(-45deg);
-    }
-
-    &_prev:hover {
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
-    }
-
-    &_next:hover {
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
-    }
-
-    &_prev.disable:hover {
-        background: none;
-    }
-
-    &_next.disable:hover {
-        background: none;
-    }
+.options .swiper-options-button-next .swiper-options-button__arrow::after {
+    border-right: 2px solid $color_white_1;
+    border-bottom: 2px solid $color_white_1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%) rotate(-45deg);
 }
