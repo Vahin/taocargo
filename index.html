@@ -743,9 +743,9 @@
             <section class="services">
                 <div class="container services__container">
                     <div class="services__header header_2 header_2_orange">Услуги</div>
-                    <div class="services__slider slider">
-                        <div class="services__viewport slider-viewport">
-                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                    <div class="services__slider swiper">
+                        <div class="services__viewport swiper-wrapper">
+                            <div class="swiper-slide servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
                                 <img src="./src/img/services/slider-1.jpg" />
                                 <div class="servicecard__header">Выкуп товара</div>
                                 <div class="servicecard__text">
@@ -755,7 +755,7 @@
                                 <button class="servicecard__button button button_transparent">Подробнее</button>
                             </div>
 
-                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                            <div class="swiper-slide servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
                                 <img src="./src/img/services/slider-2.jpg" />
                                 <div class="servicecard__header">Страховка груза</div>
                                 <div class="servicecard__text">
@@ -764,7 +764,7 @@
                                 <button class="servicecard__button button button_transparent">Подробнее</button>
                             </div>
 
-                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                            <div class="swiper-slide servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
                                 <img src="./src/img/services/slider-3.jpg" />
                                 <div class="servicecard__header">Аренда склада</div>
                                 <div class="servicecard__text">
@@ -773,7 +773,7 @@
                                 <button class="servicecard__button button button_transparent">Подробнее</button>
                             </div>
 
-                            <div class="services__item slider-item servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
+                            <div class="swiper-slide servicecard" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
                                 <img src="./src/img/services/slider-4.jpg" />
                                 <div class="servicecard__header">Перевод денежных средств</div>
                                 <div class="servicecard__text">
@@ -782,40 +782,16 @@
                                 <button class="servicecard__button button button_transparent">Подробнее</button>
                             </div>
                         </div>
-                        <a class="services__arrow arrow arrow_prev slider-prev">
-                            <span class="arrow-item"></span>
-                        </a>
-                        <a class="services__arrow arrow arrow_next slider-next">
-                            <span class="arrow-item"></span>
-                        </a>
-                        <div class="services__pagination pagination">
-                            <ul class="pagination__list">
-                                <li class="pagination__item slider-pagination-item">
-                                    <a href="#" class="pagination__link">
-                                        <span class="pagination__dot"></span>
-                                    </a>
-                                </li>
 
-                                <li class="pagination__item slider-pagination-item">
-                                    <a href="#" class="pagination__link">
-                                        <span class="pagination__dot"></span>
-                                    </a>
-                                </li>
-
-                                <li class="pagination__item slider-pagination-item">
-                                    <a href="#" class="pagination__link">
-                                        <span class="pagination__dot"></span>
-                                    </a>
-                                </li>
-
-                                <li class="pagination__item slider-pagination-item">
-                                    <a href="#" class="pagination__link">
-                                        <span class="pagination__dot"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
+                </div>
+
+                <div class="swiper-services-button swiper-services-button-prev">
+                    <span class="swiper-services-button__arrow"></span>
+                </div>
+                <div class="swiper-services-button swiper-services-button-next">
+                    <span class="swiper-services-button__arrow"></span>
                 </div>
             </section>
 

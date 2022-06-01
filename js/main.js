@@ -3,8 +3,6 @@ import { Burger } from "./burger.js";
 import { HideOnScroll } from "./hideonscroll.js";
 import { SetBGImage } from "./sbi.js";
 import { FormModal } from "./modal.js";
-import { BreakpointsSlider } from "./breakpointsslider.js";
-import { OptionSlider } from "./optionsslider.js";
 import { Accordeon } from "./accordeon.js";
 import { QuestionsForm } from "./questionsform.js";
 import { SmoothScroll } from "./SmoothScroll.js";
@@ -327,6 +325,8 @@ const choiseusSwiper = new Swiper(".choiseus__slider", {
 
 // --------------------------------------- //
 
+// ---------- Слайдер .options ---------- //
+
 const optionSlider = new Swiper(".options__slider", {
     pagination: {
         el: ".swiper-pagination",
@@ -390,42 +390,55 @@ optionButtonNext.addEventListener("click", () => {
 
 // ------------------------------------------ //
 
-const serviceSlider = new OptionSlider({
-    sliderSelector: ".services__slider",
+// ---------- Слайдер .sevices ---------- //
 
-    breakpoints: [
-        {
-            maxClientWidth: 99999,
-            slidesCount: 3,
-            slidesMargin: 30,
-            viewportHeight: false,
-            needArrowControl: true,
-            needPagination: false,
-            needClickablePagination: false,
-            needSwipeControl: true,
+const servicesSlider = new Swiper(".services__slider", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    spaceBetween: 30,
+    slidesPerView: 1,
+
+    breakpoints: {
+        750: {
+            spaceBetween: 30,
+            slidesPerView: 2,
         },
-        {
-            maxClientWidth: 1140,
-            slidesCount: 2,
-            slidesMargin: 30,
-            viewportHeight: false,
-            needArrowControl: false,
-            needPagination: true,
-            needClickablePagination: true,
-            needSwipeControl: true,
+        1270: {
+            spaceBetween: 30,
+            slidesPerView: 3,
         },
-        {
-            maxClientWidth: 950,
-            slidesCount: 1,
-            slidesMargin: 30,
-            viewportHeight: false,
-            needArrowControl: false,
-            needPagination: true,
-            needClickablePagination: true,
-            needSwipeControl: true,
-        },
-    ],
+    },
 });
+
+if (document.documentElement.clientWidth >= 1300) {
+    setNavWidth(".swiper-services-button", ".services", ".services__slider");
+}
+
+window.addEventListener("resize", () => {
+    if (document.documentElement.clientWidth >= 1300) {
+        setNavWidth(".swiper-services-button", ".services", ".services__slider");
+    }
+});
+
+const servicesButtonPrev = document.querySelector(".swiper-services-button-prev");
+const servicesButtonNext = document.querySelector(".swiper-services-button-next");
+
+toggleDisabledClass(servicesButtonPrev, servicesButtonNext, servicesSlider);
+
+servicesSlider.on("activeIndexChange", () => {
+    toggleDisabledClass(servicesButtonPrev, servicesButtonNext, servicesSlider);
+});
+
+servicesButtonPrev.addEventListener("click", () => {
+    servicesSlider.slidePrev();
+});
+servicesButtonNext.addEventListener("click", () => {
+    servicesSlider.slideNext();
+});
+// ------------------------------------------ //
 
 const questAccord = new Accordeon({
     accordeonSelector: ".questions__accordeon",

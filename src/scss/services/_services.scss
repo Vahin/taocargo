@@ -1,6 +1,7 @@
 .services {
     background: $color_bg_secondary;
     overflow: hidden;
+    position: relative;
 
     &__container {
         padding: 100px 20px;
@@ -12,35 +13,8 @@
     }
 
     &__slider {
-        position: relative;
-    }
-
-    &__viewport {
-        display: flex;
-        overflow: hidden;
-    }
-
-    &__card {
-        flex: 0 0 30%;
-    }
-
-    &__arrow {
-        display: block;
-
-        @media (max-width: $width_2) {
-            display: none;
-        }
-    }
-
-    &__pagination {
-        display: none;
-        @media (max-width: $width_2) {
-            display: block;
-        }
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        bottom: -70px;
+        align-items: stretch;
+        padding-bottom: 40px;
     }
 }
 
@@ -52,6 +26,7 @@
     padding: 250px 30px 30px 30px;
     display: flex;
     flex-direction: column;
+    min-height: 470px;
 
     &__header {
         font-weight: 700;
@@ -72,4 +47,82 @@
         margin-top: auto;
         padding: 14px 24px;
     }
+}
+
+.services .swiper-pagination {
+    bottom: 0;
+}
+
+.services .swiper-services-button {
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: 11;
+    transition: all $transition_fast;
+    cursor: pointer;
+
+    @media (max-width: 1300px) {
+        display: none;
+    }
+}
+
+.services .swiper-services-button-prev {
+    left: 0;
+
+    &:hover {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+.services .swiper-services-button-next {
+    right: 0;
+
+    &:hover {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+.services .swiper-services-button.disabled {
+    opacity: 0.8;
+}
+
+.services .swiper-services-button.disabled:hover {
+    background: none;
+    cursor: auto;
+}
+
+.services .swiper-services-button__arrow {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.services .swiper-services-button-prev .swiper-services-button__arrow::after {
+    border-left: 2px solid $color_white_1;
+    border-bottom: 2px solid $color_white_1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%) rotate(45deg);
+}
+
+.services .swiper-services-button-next .swiper-services-button__arrow::after {
+    border-right: 2px solid $color_white_1;
+    border-bottom: 2px solid $color_white_1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%) rotate(-45deg);
 }

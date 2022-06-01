@@ -1789,6 +1789,7 @@ section {
 .services {
   background: #363a4d;
   overflow: hidden;
+  position: relative;
 }
 
 .services__container {
@@ -1801,45 +1802,10 @@ section {
 }
 
 .services__slider {
-  position: relative;
-}
-
-.services__viewport {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-}
-
-.services__card {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
-}
-
-.services__arrow {
-  display: block;
-}
-
-@media (max-width: 1140px) {
-  .services__arrow {
-    display: none;
-  }
-}
-
-.services__pagination {
-  display: none;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-  bottom: -70px;
-}
-
-@media (max-width: 1140px) {
-  .services__pagination {
-    display: block;
-  }
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding-bottom: 40px;
 }
 
 .servicecard {
@@ -1857,6 +1823,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 470px;
 }
 
 .servicecard__header {
@@ -1877,6 +1844,92 @@ section {
 .servicecard__button {
   margin-top: auto;
   padding: 14px 24px;
+}
+
+.services .swiper-pagination {
+  bottom: 0;
+}
+
+.services .swiper-services-button {
+  position: absolute;
+  display: block;
+  top: 0;
+  height: 100%;
+  width: 0;
+  z-index: 11;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  .services .swiper-services-button {
+    display: none;
+  }
+}
+
+.services .swiper-services-button-prev {
+  left: 0;
+}
+
+.services .swiper-services-button-prev:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.services .swiper-services-button-next {
+  right: 0;
+}
+
+.services .swiper-services-button-next:hover {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.services .swiper-services-button.disabled {
+  opacity: 0.8;
+}
+
+.services .swiper-services-button.disabled:hover {
+  background: none;
+  cursor: auto;
+}
+
+.services .swiper-services-button__arrow {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.services .swiper-services-button__arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.services .swiper-services-button-prev .swiper-services-button__arrow::after {
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-25%, -50%) rotate(45deg);
+          transform: translate(-25%, -50%) rotate(45deg);
+}
+
+.services .swiper-services-button-next .swiper-services-button__arrow::after {
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-75%, -50%) rotate(-45deg);
+          transform: translate(-75%, -50%) rotate(-45deg);
 }
 
 .about__container {
