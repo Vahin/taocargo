@@ -2,13 +2,13 @@
 import { Burger } from "./burger.js";
 import { HideOnScroll } from "./hideonscroll.js";
 import { SetBGImage } from "./sbi.js";
-import { FormSlider } from "./formslider.js";
 import { FormModal } from "./modal.js";
 import { BreakpointsSlider } from "./breakpointsslider.js";
 import { OptionSlider } from "./optionsslider.js";
 import { Accordeon } from "./accordeon.js";
 import { QuestionsForm } from "./questionsform.js";
 import { SmoothScroll } from "./SmoothScroll.js";
+import { formMixin } from "./formMixin.js";
 
 // FUNCTIONS
 function addClassOnResize({ element, className, size }) {
@@ -30,6 +30,8 @@ new Burger({
     burger: document.querySelector(".burger"),
     menu: document.querySelector(".header__nav"),
 });
+
+//! --------- Исправить плавность на мобилках --------- !//
 
 new HideOnScroll({
     element: document.querySelector(".header"),
@@ -106,19 +108,191 @@ setSwiperHeight(".welcome__swiper");
 
 setNavWidth(".swiper-custom-button");
 
-// ---------------------------------------------- //
+// --------------------------------------------- //
 
-new FormSlider({
-    sliderSelector: ".order__slider",
-    slidesCount: 1,
-    slidesMargin: 0,
-    viewportHeight: false,
-    needArrowControl: true,
-    needPagination: true,
-    needClickablePagination: false,
-    needSwipeControl: false,
-    formSelector: ".order__form",
+// --------- Слайдер формы --------- //
+
+const formSlides = document.querySelector(".order__slider").querySelectorAll(".swiper-slide");
+let inputsList = [];
+const orederForm = document.querySelector(".order__form");
+
+formSlides.forEach((formSlide, index) => {
+    let slide = {};
+    slide.inputs = formSlide.querySelectorAll("input");
+
+    if (formSlide.querySelector(".slider-prev")) {
+        slide.prev = formSlide.querySelector(".slider-prev");
+        slide.prev.addEventListener("click", (event) => {
+            event.preventDefault();
+            formSlider.slidePrev();
+        });
+    }
+
+    if (formSlide.querySelector(".slider-next")) {
+        slide.next = formSlide.querySelector(".slider-next");
+        slide.next.addEventListener("click", (event) => {
+            event.preventDefault();
+            onOrderFormNext(index);
+        });
+    }
+
+    if (formSlide.querySelectorAll("[data-type=tel]")) {
+        const telInputs = formSlide.querySelectorAll("[data-type=tel]");
+        telInputs.forEach((input) => {
+            input.addEventListener("input", (event) => {
+                formMixin.onTelephoneInput(event, input);
+            });
+        });
+    }
+
+    if (formSlide.querySelectorAll("[data-type=file]")) {
+        const fileInputs = formSlide.querySelectorAll("[data-type=file]");
+        fileInputs.forEach((input) => {
+            input.addEventListener("input", (event) => {
+                formMixin.onLoadingFile({
+                    element: input,
+                    preview: input.nextElementSibling,
+                    complete: onLoadFile,
+                });
+            });
+        });
+    }
+
+    inputsList.push(slide);
 });
+
+const formSlider = new Swiper(".order__slider", {
+    allowTouchMove: false,
+});
+
+let unloadButton = document.querySelector(".order__slider").querySelector(".form__assistant-button_red");
+unloadButton.addEventListener("click", (event) => event.preventDefault());
+
+function onLoadFile(item, url) {
+    item.style.background = `url(${url}) center center / cover no-repeat`;
+    unloadButton.addEventListener("click", (event) => {
+        onUnloadFile(event, item);
+    });
+}
+
+function onUnloadFile(event, item) {
+    event.preventDefault();
+    item.style.background = `none`;
+    item.previousElementSibling.value = null;
+}
+
+function onOrderFormNext(index) {
+    if (
+        formMixin.isValidList(inputsList[index].inputs, {
+            invalidCallback: (input) => {
+                input.classList.add("invalid");
+
+                setTimeout(() => input.classList.remove("invalid"), 600);
+            },
+        })
+    ) {
+        formSlider.slideNext();
+        orederForm.querySelectorAll(".slider-pagination-item")[index + 1].classList.add("active");
+    }
+}
+
+const calculateButton = orederForm.querySelector(".form__assistant-button_orange");
+const volumeModal = orederForm.querySelector(".modal");
+const volumeCross = volumeModal.querySelector(".modal__cross");
+const volumeButton = volumeModal.querySelector(".modal-button");
+const volumeSelect = volumeModal.querySelector("select");
+const volumeSlides = volumeModal.querySelectorAll("input");
+
+calculateButton.addEventListener("click", onCalculateButtonClick);
+volumeSelect.addEventListener("change", onVolumeChange);
+
+function onCalculateButtonClick(event) {
+    event.preventDefault();
+
+    volumeModal.classList.add("active");
+    document.querySelector("body").classList.add("lock");
+
+    volumeCross.addEventListener("click", onCrossClick);
+    volumeModal.addEventListener("click", onCrossClick);
+    volumeButton.addEventListener("click", onCalculateButton);
+    volumeSelect.addEventListener("change", onVolumeChange);
+}
+
+function onCrossClick(event) {
+    event.preventDefault();
+
+    if (!(event.target == volumeModal) && !(event.target == volumeCross)) return;
+
+    closeOrderModal();
+}
+
+function closeOrderModal() {
+    volumeModal.classList.remove("active");
+    document.querySelector("body").classList.remove("lock");
+}
+
+const calculateTarget = orederForm.querySelector("[data-target=volume]");
+
+function onCalculateButton() {
+    if (
+        formMixin.isValidList(volumeSlides, {
+            invalidCallback: (input) => {
+                input.classList.add("invalid");
+
+                setTimeout(() => input.classList.remove("invalid"), 600);
+            },
+        })
+    ) {
+        calculateTarget.value = calculateVolume();
+        formMixin.setStorage(calculateTarget);
+        closeOrderModal();
+    }
+}
+
+function calculateVolume() {
+    let result = 1;
+    if (volumeSelect.value == "meters") {
+        for (let i = 0; i < volumeSlides.length; i++) {
+            result *= volumeSlides[i].value;
+        }
+    }
+
+    if (volumeSelect.value == "santimeters") {
+        for (let i = 0; i < volumeSlides.length; i++) {
+            result *= volumeSlides[i].value / 100;
+        }
+    }
+
+    return result ? result : 0;
+}
+
+function onVolumeChange() {
+    if (volumeSelect.value == "meters") {
+        for (let i = 0; i < volumeSlides.length; i++) {
+            volumeSlides[i].value = this.volumeSlides[i].value / 100;
+            volumeSlides[i].setAttribute("step", "0.1");
+        }
+    }
+
+    if (volumeSelect.value == "santimeters") {
+        for (let i = 0; i < volumeSlides.length; i++) {
+            volumeSlides[i].value = volumeSlides[i].value * 100;
+            volumeSlides[i].setAttribute("step", "10");
+        }
+    }
+}
+
+const storageList = orederForm.querySelectorAll("[data-storage]");
+
+formMixin.addStorageEvent(storageList);
+
+formMixin.onStorage(storageList);
+
+window.addEventListener("storage", () => {
+    formMixin.onStorage(storageList);
+});
+
+// --------------------------------- //
 
 new FormModal({ modalSelector: ".bid" });
 

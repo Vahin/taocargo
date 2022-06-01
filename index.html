@@ -135,26 +135,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="swiper-item">
-                            <div class="welcome__screen" data-sbi="center center / cover no-repeat" data-sbi-position="bottom">
-                                <img src="./src/img/welcome/slider-4.jpg" alt="" />
-                                <div class="welcome__container container">
-                                    <div class="welcome__main">
-                                        <div class="welcome__header">Экспресс авто доставка</div>
-
-                                        <div class="welcome__text">Доставка автотранспортом из Китая в Россию от 15 дней, от $0,5/кг</div>
-
-                                        <div class="welcome__request-button button button_big" data-modal="bid">
-                                            <span class="button__text">Расчитать стоимость</span>
-                                            <div class="button__arrow">
-                                                <div class="button__arrow-line"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
 
                     <div class="swiper-custom-button swiper-custom-button-prev">
@@ -253,15 +233,16 @@
                 <div class="order__container container">
                     <div class="order__subcontainer">
                         <div class="order__header header_2">Получить рассчет стоимости доставки вашего груза</div>
+
                         <form class="order__form form">
-                            <div class="order__slider slider">
-                                <ul class="slider-pagination">
-                                    <li class="slider-pagination-item">1</li>
-                                    <li class="slider-pagination-item">2</li>
-                                    <li class="slider-pagination-item">3</li>
-                                </ul>
-                                <div class="slider-viewport">
-                                    <div class="slider-item form__container">
+                            <ul class="slider-pagination">
+                                <li class="slider-pagination-item active">1</li>
+                                <li class="slider-pagination-item">2</li>
+                                <li class="slider-pagination-item">3</li>
+                            </ul>
+                            <div class="order__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide form__container">
                                         <div class="form__section">
                                             <label class="form__label">
                                                 <div class="form__input-name">Категория товара:</div>
@@ -354,6 +335,7 @@
                                                 <div class="form__input_file">Загрузить фото товара</div>
                                             </label>
                                         </div>
+
                                         <div class="form__section form__section_double form__section_centered">
                                             <div class="form__submit-button button button_big slider-next">
                                                 <span class="button__text">Следующий шаг</span>
@@ -364,7 +346,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slider-item form__container">
+                                    <div class="swiper-slide form__container">
                                         <div class="form__section form__section_double">
                                             <label class="form__label">
                                                 <div class="form__input-name">Имя:</div>
@@ -429,7 +411,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slider-item form__complete-page">
+                                    <div class="swiper-slide form__complete-page">
                                         <div class="form__complete-image" data-sbi="0 center / contain no-repeat">
                                             <img src="./src/img/calculate/checked.png" alt="" />
                                         </div>
@@ -450,66 +432,67 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="modal">
-                                    <div class="modal__container form__container">
-                                        <button class="modal__cross"></button>
-                                        <div class="modal__header">Рассчитать объем</div>
-                                        <div class="form__section form__section_double">
-                                            <label class="form__label">
-                                                <select class="form__input form__input_select">
-                                                    <option value="meters" class="form__input_option">Метры</option>
-                                                    <option value="santimeters" class="form__input_option">Сантиметры</option>
-                                                </select>
-                                            </label>
-                                        </div>
+                            </div>
 
-                                        <div class="form__section form__section_double">
-                                            <label class="form__label">
-                                                <div class="form__input-name">Ширина:</div>
-                                                <input
-                                                    type="number"
-                                                    class="form__input"
-                                                    placeholder="Введите ширину"
-                                                    min="0"
-                                                    step="0.1"
-                                                    data-type="number"
-                                                />
-                                            </label>
-                                        </div>
+                            <div class="modal">
+                                <div class="modal__container form__container">
+                                    <button class="modal__cross"></button>
+                                    <div class="modal__header">Рассчитать объем</div>
+                                    <div class="form__section form__section_double">
+                                        <label class="form__label">
+                                            <select class="form__input form__input_select">
+                                                <option value="meters" class="form__input_option">Метры</option>
+                                                <option value="santimeters" class="form__input_option">Сантиметры</option>
+                                            </select>
+                                        </label>
+                                    </div>
 
-                                        <div class="form__section form__section_double">
-                                            <label class="form__label">
-                                                <div class="form__input-name">Длина:</div>
-                                                <input
-                                                    type="number"
-                                                    class="form__input"
-                                                    placeholder="Введите стоимость"
-                                                    min="0"
-                                                    step="0.1"
-                                                    data-type="number"
-                                                />
-                                            </label>
-                                        </div>
+                                    <div class="form__section form__section_double">
+                                        <label class="form__label">
+                                            <div class="form__input-name">Ширина:</div>
+                                            <input
+                                                type="number"
+                                                class="form__input"
+                                                placeholder="Введите ширину"
+                                                min="0"
+                                                step="0.1"
+                                                data-type="number"
+                                            />
+                                        </label>
+                                    </div>
 
-                                        <div class="form__section form__section_double">
-                                            <label class="form__label">
-                                                <div class="form__input-name">Высота:</div>
-                                                <input
-                                                    type="number"
-                                                    class="form__input"
-                                                    placeholder="Введите стоимость"
-                                                    min="0"
-                                                    step="0.1"
-                                                    data-type="number"
-                                                />
-                                            </label>
-                                        </div>
+                                    <div class="form__section form__section_double">
+                                        <label class="form__label">
+                                            <div class="form__input-name">Длина:</div>
+                                            <input
+                                                type="number"
+                                                class="form__input"
+                                                placeholder="Введите стоимость"
+                                                min="0"
+                                                step="0.1"
+                                                data-type="number"
+                                            />
+                                        </label>
+                                    </div>
 
-                                        <div class="form_submit-button button button_big modal-button">
-                                            <span class="button__text">Расчитать</span>
-                                            <div class="button__arrow">
-                                                <div class="button__arrow-line"></div>
-                                            </div>
+                                    <div class="form__section form__section_double">
+                                        <label class="form__label">
+                                            <div class="form__input-name">Высота:</div>
+                                            <input
+                                                type="number"
+                                                class="form__input"
+                                                placeholder="Введите стоимость"
+                                                min="0"
+                                                step="0.1"
+                                                data-type="number"
+                                            />
+                                        </label>
+                                    </div>
+
+                                    <div class="form_submit-button button button_big modal-button">
+                                        <span class="button__text">Расчитать</span>
+                                        <div class="button__arrow">
+                                            <div class="button__arrow-line"></div>
                                         </div>
                                     </div>
                                 </div>

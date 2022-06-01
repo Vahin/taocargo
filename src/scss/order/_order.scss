@@ -7,6 +7,7 @@
         &::after {
             content: "";
             position: absolute;
+            z-index: 11;
             width: $width_2;
             height: 100%;
             bottom: 0;
@@ -64,9 +65,13 @@
             }
         }
     }
+
+    & .swiper-slide {
+        border-radius: 20px;
+    }
 }
 
-.order__slider {
+.order__form {
     position: relative;
 
     & .slider-pagination {
@@ -115,13 +120,9 @@
             animation: invalid-paggination $transition_middle * 2;
         }
     }
+}
 
-    & .slider-viewport {
-        overflow: hidden;
-        border-radius: 20px;
-        box-shadow: $shadow_1;
-    }
-
+.order__slider {
     & .modal__container {
         max-width: 354px;
         grid-template-columns: 1fr;
