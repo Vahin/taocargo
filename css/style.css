@@ -1509,7 +1509,8 @@ section {
 }
 
 .choiseus__container {
-  padding: 90px 0 80px;
+  padding-top: 90px;
+  padding-bottom: 80px;
 }
 
 .choiseus__header {
@@ -1517,44 +1518,9 @@ section {
   text-align: center;
 }
 
-.choiseus__slider {
-  position: relative;
-}
-
-.choiseus__viewport {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  overflow: hidden;
-}
-
-.choiseus__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 23%;
-          flex: 0 0 23%;
-  margin-bottom: 48px;
-}
-
-.choiseus__pagination {
-  display: none;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-
-@media (max-width: 1300px) {
-  .choiseus__pagination {
-    display: block;
-  }
-}
-
-.iconcard {
+.choiseus .swiper-slide {
+  text-align: center;
+  height: calc((100% - 30px) / 2) !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1562,18 +1528,17 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-@media (max-width: 1300px) {
-  .iconcard {
-    padding: 45px 0;
-  }
-}
-
-.iconcard__img {
+.iconcard__imgbox {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 93px;
   height: 93px;
   background: #89c249;
@@ -1581,20 +1546,17 @@ section {
   -webkit-box-shadow: 0px 4px 13px rgba(30, 35, 66, 0.11);
           box-shadow: 0px 4px 13px rgba(30, 35, 66, 0.11);
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
 
-.iconcard__img::after {
+.iconcard__img {
   position: absolute;
-  content: "";
-  width: 121%;
-  height: 121%;
+  width: 60%;
+  height: 60%;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid #6c7188;
+  -webkit-transform: translate(-45%, -50%);
+          transform: translate(-45%, -50%);
 }
 
 .iconcard__text {
@@ -1604,6 +1566,20 @@ section {
   padding: 0 10px;
   text-align: center;
   max-width: 263px;
+}
+
+.choiseus .swiper {
+  height: 500px;
+}
+
+@media (max-width: 1300px) {
+  .choiseus .swiper {
+    height: 250px;
+  }
+}
+
+.choiseus .swiper-pagination {
+  bottom: 0;
 }
 
 .options__container {

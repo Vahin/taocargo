@@ -110,7 +110,7 @@ setNavWidth(".swiper-custom-button");
 
 // --------------------------------------------- //
 
-// --------- Слайдер формы --------- //
+// ---------- Слайдер формы ---------- //
 
 const formSlides = document.querySelector(".order__slider").querySelectorAll(".swiper-slide");
 let inputsList = [];
@@ -296,31 +296,33 @@ window.addEventListener("storage", () => {
 
 new FormModal({ modalSelector: ".bid" });
 
-new BreakpointsSlider({
-    sliderSelector: ".choiseus__slider",
-
-    breakpoints: [
-        {
-            maxClientWidth: 1300,
-            slidesCount: 3,
-            slidesMargin: 0,
-            viewportHeight: false,
-            needArrowControl: false,
-            needPagination: true,
-            needClickablePagination: true,
-            needSwipeControl: true,
+// ---------- Слайдер .choiseus ---------- //
+const choiseusSwiper = new Swiper(".choiseus__slider", {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    slidesPerView: 1,
+    grid: {
+        rows: 1,
+    },
+    spaceBetween: 0,
+    breakpoints: {
+        950: {
+            slidesPerView: 3,
+            grid: {
+                rows: 1,
+            },
+            spaceBetween: 30,
         },
-        {
-            maxClientWidth: 950,
-            slidesCount: 1,
-            slidesMargin: 0,
-            viewportHeight: false,
-            needArrowControl: false,
-            needPagination: true,
-            needClickablePagination: true,
-            needSwipeControl: true,
+        1300: {
+            slidesPerView: 4,
+            grid: {
+                rows: 2,
+            },
+            spaceBetween: 30,
         },
-    ],
+    },
 });
 
 new OptionSlider({
