@@ -742,6 +742,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   z-index: 80;
+  overflow-y: scroll;
 }
 
 .modal__container {
