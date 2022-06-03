@@ -466,7 +466,7 @@ class TaoScroll extends SmoothScroll {
                 element: document.querySelector(`.${target}`),
                 speed,
                 onEnd: () => {
-                    serviceSlider.moveSliderTo(targetNumber - 1);
+                    servicesSlider.slideTo(targetNumber - 1);
                 },
             });
         }
