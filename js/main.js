@@ -32,8 +32,8 @@ new Burger({
 //! --------- Исправить плавность на мобилках --------- !//
 
 new HideOnScroll({
-    element: document.querySelector(".header"),
-    menu: document.querySelector(".header__nav"),
+    elementSelector: ".header",
+    menuSelector: ".header__nav",
 });
 
 new SetBGImage({
