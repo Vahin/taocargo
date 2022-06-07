@@ -1,12 +1,13 @@
 export class HideOnScroll {
-    constructor({ elementSelector, menuSelector, menuActiveClass = "active" }) {
+    constructor({ elementSelector, menuSelector, menuActiveClass = "active", breakpoint = 950 }) {
         this.element = document.querySelector(elementSelector);
         this.menu = document.querySelector(menuSelector);
         this.menuActiveClass = menuActiveClass;
+        this.breakpoint = breakpoint;
 
         this.onScroll = this.onScroll.bind(this);
         this.element.style.willChange = "transform";
-        this.element.style.transition = "transform 100ms";
+        this.element.style.transition = "transform 200ms";
         this.currentYOffset = 0;
 
         window.addEventListener("scroll", this.onScroll);
@@ -15,8 +16,10 @@ export class HideOnScroll {
     onScroll() {
         if (this.menu.classList.contains(this.menuActiveClass)) return;
 
-        let delta = window.pageYOffset - this.currentYOffset;
-        this.currentYOffset = window.pageYOffset;
+        let pageY = window.pageYOffset <= 0 ? 0 : window.pageYOffset;
+
+        let delta = pageY - this.currentYOffset;
+        this.currentYOffset = pageY;
 
         this.toggleElement(delta);
     }
@@ -24,6 +27,11 @@ export class HideOnScroll {
     toggleElement(delta) {
         if (!this.element.style.transform) {
             this.element.style.transform = `translateY(0px)`;
+        }
+
+        if (document.documentElement.offsetWidth > this.breakpoint) {
+            this.element.style.transform = `translateY(0px)`;
+            return;
         }
 
         let style = this.element.style.transform;
