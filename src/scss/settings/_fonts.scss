@@ -3,6 +3,7 @@
     src: url("../src/fonts/ProximaNova-Regular.ttf"), url("../src/fonts/ProximaNova-Regular.eot"), url("../src/fonts/ProximaNova-Regular.woff");
     font-style: normal;
     font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
     src: url("../src/fonts/ProximaNova-Bold.ttf"), url("../src/fonts/ProximaNova-Bold.eot"), url("../src/fonts/ProximaNova-Bold.woff");
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
@@ -17,4 +19,5 @@
     src: url("../src/fonts/ProximaNova-Semibold.ttf"), url("../src/fonts/ProximaNova-Semibold.eot"), url("../src/fonts/ProximaNova-Semibold.woff");
     font-style: normal;
     font-weight: 600;
+    font-display: swap;
 }
