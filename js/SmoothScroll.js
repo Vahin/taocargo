@@ -34,50 +34,29 @@ export class SmoothScroll {
         });
     }
 
-    smoothScrollTo({
-        element,
-        speed = 1,
-        timing = (time) => {
-            return time < 0.5 ? 4 * Math.pow(time, 3) : 1 - Math.pow(-2 * time + 2, 3) / 2;
-        },
-        onEnd = () => {},
-    }) {
+    smoothScrollTo({ element, onEnd = () => {} }) {
         if (!element) return;
         let offsetTop = document.querySelector("header").offsetHeight;
 
         let startPosition = window.pageYOffset;
-        let finishPosition = element.getBoundingClientRect().top;
-        if (finishPosition < 0 && window.clientWidth < this.breakpoint) finishPosition -= offsetTop;
+        let endPosition = element.getBoundingClientRect().top;
+        if (endPosition < 0 && window.clientWidth < this.breakpoint) endPosition -= offsetTop;
 
-        if (startPosition + finishPosition < 0) {
-            finishPosition = -startPosition;
+        if (startPosition + endPosition < 0) {
+            endPosition = -startPosition;
         }
+        let y = startPosition + endPosition;
 
-        let pathLength = Math.abs(finishPosition);
-        let duration = pathLength / speed;
+        window.scrollBy({
+            top: endPosition,
+            behavior: "smooth",
+        });
 
-        let start = null;
-
-        function step(time) {
-            if (start === null) start = time;
-            let timeFraction = (time - start) / duration;
-            if (timeFraction > 1) timeFraction = 1;
-
-            let progress = timing(timeFraction);
-            let yOffset =
-                finishPosition < 0
-                    ? Math.max(startPosition - progress * pathLength, startPosition + finishPosition)
-                    : Math.min(startPosition + progress * pathLength, startPosition + finishPosition);
-
-            window.scrollTo(0, yOffset);
-
-            if (timeFraction < 1) {
-                requestAnimationFrame(step);
-            } else {
+        let endInterval = setInterval(() => {
+            if (window.pageYOffset >= y - 20 && window.pageYOffset <= y + 20) {
                 onEnd();
+                clearInterval(endInterval);
             }
-        }
-
-        requestAnimationFrame(step);
+        }, 20);
     }
 }
