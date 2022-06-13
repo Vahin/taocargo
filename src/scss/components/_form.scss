@@ -191,10 +191,11 @@
     }
 
     &__submit-button {
+        margin-bottom: 20px;
     }
 
     &__complete-page {
-        padding: 50px 70px 40px 50px;
+        padding: 90px 70px 40px 50px;
         display: flex;
         flex-direction: column;
 
@@ -208,6 +209,7 @@
     &__complete-image {
         height: 112px;
         margin-bottom: 34px;
+        margin-top: 30px;
     }
 
     &__complete-head {

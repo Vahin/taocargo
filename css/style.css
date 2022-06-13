@@ -470,8 +470,12 @@ section {
           animation: invalid-file 1.2s;
 }
 
+.form__submit-button {
+  margin-bottom: 20px;
+}
+
 .form__complete-page {
-  padding: 50px 70px 40px 50px;
+  padding: 90px 70px 40px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -491,6 +495,7 @@ section {
 .form__complete-image {
   height: 112px;
   margin-bottom: 34px;
+  margin-top: 30px;
 }
 
 .form__complete-head {
