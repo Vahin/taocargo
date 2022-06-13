@@ -317,9 +317,9 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .form__section_margin {
@@ -340,6 +340,7 @@ section {
 }
 
 .form__input-name {
+  display: block;
   font-weight: 600;
   font-size: 15px;
   line-height: 126%;
@@ -375,6 +376,7 @@ section {
 }
 
 .form__input_checkbox {
+  display: block;
   padding-left: 33px;
   margin-top: 19px;
   position: relative;

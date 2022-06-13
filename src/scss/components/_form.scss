@@ -41,7 +41,7 @@
     &__section_checkbox {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     &__section_margin {
@@ -62,6 +62,7 @@
     }
 
     &__input-name {
+        display: block;
         font-weight: 600;
         font-size: $fsz / 4 * 5;
         line-height: 126%;
@@ -98,6 +99,7 @@
     }
 
     &__input_checkbox {
+        display: block;
         padding-left: 33px;
         margin-top: 19px;
         position: relative;
