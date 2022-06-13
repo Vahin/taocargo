@@ -1097,6 +1097,7 @@ section {
           box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);
   overflow: hidden;
   z-index: 12;
+  min-height: 70vh;
 }
 
 .welcome__screen {
@@ -1608,6 +1609,8 @@ section {
 
 .options {
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .options__container {
