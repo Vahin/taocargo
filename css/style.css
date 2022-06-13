@@ -159,6 +159,10 @@ section {
   overflow: hidden;
 }
 
+.lock-burger {
+  overflow: hidden;
+}
+
 .button {
   display: inline-block;
   padding: 14px 27px;
@@ -741,7 +745,7 @@ section {
 .modal {
   position: fixed;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   top: 0;
   left: -300%;
   opacity: 0;
@@ -765,7 +769,7 @@ section {
 
 .modal__container {
   margin: 20px 0;
-  padding: 48px 0 41px;
+  padding: 48px 55px 41px;
   border-radius: 20px;
   -webkit-box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);
           box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);
@@ -1016,7 +1020,7 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     top: -100%;
     max-height: 0;
     opacity: 1;
@@ -1026,7 +1030,6 @@ section {
 }
 
 .header__nav.active {
-  max-height: 100%;
   top: 0;
   opacity: 1;
 }

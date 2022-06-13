@@ -1,17 +1,10 @@
 export class Burger {
-
-    constructor({
-        burger,
-        menu,
-        activeClassName = 'active',
-        bodyLockClass = 'lock',
-        hideResize = 950,
-    }) {
+    constructor({ burger, menu, activeClassName = "active", bodyLockClass = "lock-burger", hideResize = 950 }) {
         this.burger = burger;
         this.menu = menu;
         this.burgerClass = burger.classList[0];
         this.menuClass = menu.classList[0];
-        this.body = document.querySelector('body');
+        this.body = document.querySelector("body");
         this.activeClassName = activeClassName;
         this.bodyLockClass = bodyLockClass;
         this.hideResize = hideResize;
@@ -20,7 +13,7 @@ export class Burger {
         this.onDocumentClick = this.onDocumentClick.bind(this);
         this.onResize = this.onResize.bind(this);
 
-        this.burger.addEventListener('click', this.onButtonClick);
+        this.burger.addEventListener("click", this.onButtonClick);
     }
 
     onButtonClick(event) {
@@ -55,18 +48,20 @@ export class Burger {
         this.burger.classList.remove(this.activeClassName);
         this.menu.classList.remove(this.activeClassName);
         this.body.classList.remove(this.bodyLockClass);
-    
-        document.removeEventListener('click', this.onDocumentClick);
-        window.removeEventListener('resize', this.onResize);
+        this.menu.style.maxHeight = 0;
+
+        document.removeEventListener("click", this.onDocumentClick);
+        window.removeEventListener("resize", this.onResize);
     }
 
     showMenu() {
         this.burger.classList.add(this.activeClassName);
         this.menu.classList.add(this.activeClassName);
         this.body.classList.add(this.bodyLockClass);
+        this.menu.style.maxHeight = this.menu.scrollHeight + 10 + "px";
 
-        document.addEventListener('click', this.onDocumentClick);
-        window.addEventListener('resize', this.onResize);
+        document.addEventListener("click", this.onDocumentClick);
+        window.addEventListener("resize", this.onResize);
     }
 }
 
