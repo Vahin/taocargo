@@ -1,5 +1,5 @@
 export class HideOnScroll {
-    constructor({ elementSelector, menuSelector, menuActiveClass = "active", breakpoint = 950 }) {
+    constructor({ elementSelector, menuSelector, menuActiveClass = "active", breakpoint = 950, duration = 150 }) {
         this.element = document.querySelector(elementSelector);
         this.menu = document.querySelector(menuSelector);
         this.menuActiveClass = menuActiveClass;
@@ -7,7 +7,7 @@ export class HideOnScroll {
 
         this.onScroll = this.onScroll.bind(this);
         this.element.style.willChange = "transform";
-        this.element.style.transition = "transform 200ms";
+        this.element.style.transition = `transform ${duration}ms`;
         this.currentYOffset = 0;
 
         window.addEventListener("scroll", this.onScroll);

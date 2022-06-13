@@ -4,24 +4,32 @@
   border: 0;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-:focus, :active {
+:focus,
+:active {
   outline: none;
 }
 
-a:focus, a:active {
+a:focus,
+a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
+nav,
+footer,
+header,
+aside {
   display: block;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -32,7 +40,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: inherit;
   background: none;
 }
@@ -50,7 +60,8 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
 }
 
@@ -66,13 +77,18 @@ img {
   vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: 400;
 }
 
 .wrapper {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -742,12 +758,14 @@ section {
       -ms-flex-align: center;
           align-items: center;
   z-index: 80;
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .modal__container {
-  margin: 20px;
-  padding: 48px 55px 41px;
+  margin: 20px 0;
+  padding: 48px 0 41px;
   border-radius: 20px;
   -webkit-box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);
           box-shadow: 5px 15px 40px rgba(5, 11, 49, 0.32);

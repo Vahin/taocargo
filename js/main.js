@@ -29,8 +29,6 @@ new Burger({
     menu: document.querySelector(".header__nav"),
 });
 
-//! --------- Исправить плавность на мобилках --------- !//
-
 new HideOnScroll({
     elementSelector: ".header",
     menuSelector: ".header__nav",

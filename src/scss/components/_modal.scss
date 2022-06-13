@@ -11,11 +11,13 @@
     justify-content: center;
     align-items: center;
     z-index: 80;
-    overflow-y: scroll;
+    overflow-y: auto;
+    padding-left: 30px;
+    padding-right: 30px;
 
     &__container {
-        margin: 20px;
-        padding: 48px 55px 41px;
+        margin: 20px 0;
+        padding: 48px 0 41px;
 
         border-radius: 20px;
         box-shadow: $shadow_1;
