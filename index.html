@@ -252,6 +252,7 @@
                                                     placeholder="Категория товара"
                                                     data-type="text"
                                                     data-storage="category"
+                                                    tabindex="1"
                                                 />
                                             </label>
                                         </div>
@@ -267,6 +268,7 @@
                                                     min="0"
                                                     data-type="number"
                                                     data-storage="price"
+                                                    tabindex="2"
                                                 />
                                             </label>
                                         </div>
@@ -282,6 +284,7 @@
                                                     min="0"
                                                     data-type="number"
                                                     data-storage="weight"
+                                                    tabindex="3"
                                                 />
                                             </label>
                                         </div>
@@ -299,17 +302,18 @@
                                                     step="0.5"
                                                     min="0"
                                                     data-storage="volume"
+                                                    tabindex="4"
                                                 />
                                             </label>
                                         </div>
 
                                         <div class="form__section form__section_checkbox">
                                             <label class="form__label">
-                                                <input type="checkbox" class="form__input form__input_hidden" />
+                                                <input type="checkbox" class="form__input form__input_hidden" tabindex="0" />
                                                 <div class="form__input_checkbox">Страховка</div>
                                             </label>
                                             <label class="form__label">
-                                                <input type="checkbox" class="form__input form__input_hidden" />
+                                                <input type="checkbox" class="form__input form__input_hidden" tabindex="0" />
                                                 <div class="form__input_checkbox">Таможенное оформление</div>
                                             </label>
                                         </div>
@@ -323,6 +327,7 @@
                                                     placeholder="Введите код"
                                                     data-type="text"
                                                     data-storage="code"
+                                                    tabindex="5"
                                                 />
                                             </label>
                                         </div>
@@ -331,7 +336,7 @@
                                             <button class="form__assistant-button form__assistant-button_red">Удалить фото</button>
                                             <label class="form__label">
                                                 <div class="form__input-name">фотография.jpeg:</div>
-                                                <input type="file" class="form__input form__input_hidden" data-type="file" />
+                                                <input type="file" class="form__input form__input_hidden" data-type="file" tabindex="6" />
                                                 <div class="form__input_file">Загрузить фото товара</div>
                                             </label>
                                         </div>
@@ -356,6 +361,7 @@
                                                     placeholder="Введите имя"
                                                     data-type="name"
                                                     data-storage="name"
+                                                    tabindex="7"
                                                 />
                                             </label>
                                         </div>
@@ -369,6 +375,7 @@
                                                     placeholder="+7(___)___-__-__"
                                                     data-type="tel"
                                                     data-storage="tel"
+                                                    tabindex="8"
                                                 />
                                             </label>
                                         </div>
@@ -382,6 +389,7 @@
                                                     placeholder="Введите e-mail"
                                                     data-type="email"
                                                     data-storage="email"
+                                                    tabindex="9"
                                                 />
                                             </label>
                                         </div>
@@ -393,6 +401,7 @@
                                                     class="form__input form__input_area"
                                                     placeholder="Подробности о товаре, описание, количество"
                                                     data-storage="comment"
+                                                    tabindex="10"
                                                 ></textarea>
                                             </label>
                                         </div>
@@ -415,7 +424,7 @@
                                         <div class="form__complete-image" data-sbi="0 center / contain no-repeat">
                                             <img src="./src/img/calculate/checked.png" alt="" />
                                         </div>
-                                        <div class="form__complete-head">Спасибо за заявку!</div>
+                                        <div class="form__complete-head" tabindex="11">Спасибо за заявку!</div>
                                         <div class="form__complete-text">Мы обязатальено свяжемся с вами.</div>
 
                                         <div class="form__complete-sameway">Так же для вас может быть полезно:</div>

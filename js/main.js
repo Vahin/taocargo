@@ -157,6 +157,16 @@ formSlides.forEach((formSlide, index) => {
     inputsList.push(slide);
 });
 
+document.addEventListener("keydown", (event) => {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+
+    if (event.key == "Enter") {
+        event.preventDefault();
+    }
+});
+
 const formSlider = new Swiper(".order__slider", {
     allowTouchMove: false,
 });
@@ -187,7 +197,8 @@ function onOrderFormNext(index) {
             },
         })
     ) {
-        formSlider.slideNext();
+        formSlider.slideTo(index + 1);
+
         orederForm.querySelectorAll(".slider-pagination-item")[index + 1].classList.add("active");
     }
 }
